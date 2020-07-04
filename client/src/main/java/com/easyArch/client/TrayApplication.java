@@ -13,7 +13,7 @@ public class TrayApplication extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         UiController uiController = UiController.getInstance();
         uiController.setPrimaryStage("root", stage);
         Stage login = uiController.loadStage(IdContainer.LoginView, LayoutUi.LoginView, StageStyle.UNDECORATED);
