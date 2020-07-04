@@ -1,8 +1,8 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+.mvn/wrapper/maven-wrapper.jar
+**/src/main/**
+**/src/test/**
 
 ### IntelliJ IDEA ###
 .idea
