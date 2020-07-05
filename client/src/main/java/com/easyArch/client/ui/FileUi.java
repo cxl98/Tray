@@ -38,51 +38,60 @@ public class FileUi extends JFrame implements ActionListener {
 
         JPanel jPanel=new JPanel(new GridLayout(3,1));
 
-        JPanel puppetNamePanel=new JPanel();
-        jPanel.add(puppetNamePanel);
+        JPanel upPanel=new JPanel();
+        jPanel.add(upPanel);
         JLabel jup=new JLabel();
         jup.setText("上:");
         jup.setFont(contentFont);
-        puppetNamePanel.add(jup);
-
-        up =new JTextField(10);
+        upPanel.add(jup);
+        up =new JTextField(20);
         up.setToolTipText("上");
         up.setFont(contentFont);
-        puppetNamePanel.add(up);
+        upPanel.add(up);
+
+        JPanel downPanel=new JPanel();
+        jPanel.add(downPanel);
         JLabel jdown=new JLabel();
-        jdown.setText("上:");
+        jdown.setText("下:");
         jdown.setFont(contentFont);
-        puppetNamePanel.add(jdown);
+        downPanel.add(jdown);
+        down=new JTextField(20);
+        down.setToolTipText("下");
+        down.setFont(contentFont);
+        downPanel.add(down);
 
-//        up =new JTextField(10);
-//        up.setToolTipText("上");
-//        up.setFont(contentFont);
-//        puppetNamePanel.add(up);
-//        JLabel jLabel=new JLabel();
-//        jLabel.setText("上:");
-//        jLabel.setFont(contentFont);
-//        puppetNamePanel.add(jLabel);
-//
-//        up =new JTextField(10);
-//        up.setToolTipText("上");
-//        up.setFont(contentFont);
-//        puppetNamePanel.add(up);
-//        JLabel jLabel=new JLabel();
-//        jLabel.setText("上:");
-//        jLabel.setFont(contentFont);
-//        puppetNamePanel.add(jLabel);
-//
-//        up =new JTextField(10);
-//        up.setToolTipText("上");
-//        up.setFont(contentFont);
-//        puppetNamePanel.add(up);
+        JPanel leftPanel=new JPanel();
+        jPanel.add(leftPanel);
+        JLabel leftJLabel=new JLabel();
+        leftJLabel.setText("左：");
+        leftJLabel.setFont(contentFont);
+        leftPanel.add(leftJLabel);
+        left=new JTextField(20);
+        left.setToolTipText("左");
+        left.setFont(contentFont);
+        leftPanel.add(left);
 
-        JPanel remoteButtonPanel=new JPanel();
-        jPanel.add(remoteButtonPanel);
+        JPanel rightPanel=new JPanel();
+        jPanel.add(rightPanel);
+        JLabel rightJLabel=new JLabel();
+        rightJLabel.setText("右：");
+        rightJLabel.setFont(contentFont);
+        rightPanel.add(rightJLabel);
+        right=new JTextField(20);
+        right.setToolTipText("右");
+        right.setFont(contentFont);
+        rightPanel.add(right);
+
+        JPanel buttonPanel=new JPanel();
+        jPanel.add(buttonPanel);
         JButton jButton=new JButton();
-        jButton.setText("远程");
+        JButton jButton1=new JButton();
+        jButton.setText("修改");
+        jButton1.setText("重置");
+        jButton1.addActionListener(this);
         jButton.addActionListener(this);
-        remoteButtonPanel.add(jButton);
+        buttonPanel.add(jButton);
+        buttonPanel.add(jButton1);
 
         final Container contentPane = getContentPane();
         contentPane.add(BorderLayout.CENTER,jPanel);
@@ -91,7 +100,7 @@ public class FileUi extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        System.out.println(e.getActionCommand());
     }
 
     public void s() {
