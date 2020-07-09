@@ -3,6 +3,8 @@ package com.easyArch.client.ui.controller;
 
 import com.cxl.rpc.util.IpUtil;
 import com.easeArch.common.entry.User;
+import com.easeArch.common.handler.Handler;
+import com.easyArch.client.handler.HandlerFactory;
 import com.easyArch.client.ui.ControllerStage;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -47,9 +49,10 @@ public class RegistryViewController implements Initializable, ControllerStage {
         user.setPassword(text);
         user.setCreateMillisTime(new Date());
         user.setIp(IpUtil.getIp());
-//        API login= (API) new RpcReferenceBean(NetEnum.NETTY, Serializer.SerializerEnum.PROTOSTUFF.getSerializer(), CallType.SYNC, LoadBalance.ROUND,API.class,null,500,"127.0.0.1:8080",null,null,null).getObject();
-//        Object login1 = login.registry(user);
-//        System.out.println(login1);
+        HandlerFactory handlerFactory=HandlerFactory.getFactory();
+        Handler registry = handlerFactory.handler("registry");
+        Object handler = registry.handler(user);
+        System.out.println(handler);
     }
     @FXML
     public void register_entered() {
