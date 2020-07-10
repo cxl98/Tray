@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -14,6 +15,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #169ADA;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.MainViewController">
 	<children>
+		<ImageView fx:id="shineImage" layoutX="9.0" layoutY="39.0" onMouseClicked="#clicked" onMouseExited="#headEx">
+			<!--<image >-->
+				<!--<Image url="@../../main/img/xxx.png" />-->
+			<!--</image>-->
+			<!--<cursor>-->
+				<!--<Cursor fx:constant="HAND" />-->
+			<!--</cursor>-->
+		</ImageView>
 		<TabPane layoutY="153.0" prefHeight="519.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
 			<tabs>
 				<Tab text="%main.tab.friend">
@@ -46,7 +55,7 @@
 				<Image url="@../../login/img/close.png" />
 			</image>
 		</ImageView>
-		<Label fx:id="username" contentDisplay="CENTER" layoutX="4.0" layoutY="18.0" onMouseEntered="#username_entered" onMouseExited="#username_exited" text="username" textFill="WHITE">
+		<Label fx:id="username" contentDisplay="CENTER" layoutX="9.0" layoutY="18.0" onMouseEntered="#username_entered" onMouseExited="#username_exited" text="username" textFill="WHITE">
 			<font>
 				<Font size="20.0" />
 			</font>
@@ -62,54 +71,6 @@
 				<!--<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />-->
 			<!--</padding>-->
 		<!--</Label>-->
-		<ImageView fx:id="shineImage" fitHeight="112.0" fitWidth="107.0" layoutX="4.0" layoutY="34.0" visible="false">
-			<image>
-				<Image url="@../img/icon.jpg" />
-			</image>
-		</ImageView>
-		<!--<HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="672.0" minWidth="280.0" prefHeight="26.0" prefWidth="300.0" spacing="33.0" style="-fx-background-color: white;">-->
-			<!--<children>-->
-				<!--<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">-->
-					<!--<image>-->
-						<!--<Image url="@../img/bottom/menu_btn_normal.png" />-->
-					<!--</image>-->
-				<!--</ImageView>-->
-				<!--<HBox alignment="CENTER_RIGHT" layoutX="1.0" minHeight="20.0" minWidth="180.0" prefHeight="20.0" prefWidth="180.0" spacing="20.0">-->
-					<!--<children>-->
-						<!--<ImageView fitHeight="20.0" fitWidth="20.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true" x="10.0">-->
-							<!--<image>-->
-								<!--<Image url="@../img/app/2.png" />-->
-							<!--</image>-->
-						<!--</ImageView>-->
-						<!--<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">-->
-							<!--<image>-->
-								<!--<Image url="@../img/app/9.png" />-->
-							<!--</image>-->
-						<!--</ImageView>-->
-						<!--<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">-->
-							<!--<image>-->
-								<!--<Image url="@../img/app/4.png" />-->
-							<!--</image>-->
-						<!--</ImageView>-->
-						<!--<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">-->
-							<!--<image>-->
-								<!--<Image url="@../img/app/11.png" />-->
-							<!--</image>-->
-						<!--</ImageView>-->
-						<!--<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">-->
-							<!--<image>-->
-								<!--<Image url="@../img/app/7.png" />-->
-							<!--</image>-->
-						<!--</ImageView>-->
-					<!--</children>-->
-				<!--</HBox>-->
-				<!--<ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">-->
-					<!--<image>-->
-						<!--<Image url="@../img/bottom/appbox_mgr_btn.png" />-->
-					<!--</image>-->
-				<!--</ImageView>-->
-			<!--</children>-->
-		<!--</HBox>-->
 
 	</children>
 </Pane>

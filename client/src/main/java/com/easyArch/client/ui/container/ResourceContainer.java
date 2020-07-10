@@ -7,6 +7,7 @@ public class ResourceContainer {
     private static Image close_1 = getImage("login/img/close_1.png");
     private static Image min = getImage("login/img/min.png");
     private static Image min_1 = getImage("login/img/min_1.png");
+    private static Image head=getImage("main/img/xxx.png");
 
     public static Image getMin_1() {
         return min_1;
@@ -22,6 +23,14 @@ public class ResourceContainer {
 
     public static Image getMin() {
         return min;
+    }
+
+    public static Image getHead() {
+        return head;
+    }
+
+    public static void setHead(Image head) {
+        ResourceContainer.head = head;
     }
 
     private static Image getImage(String resourcePath) {

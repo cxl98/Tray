@@ -12,8 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -43,6 +46,8 @@ public class MainViewController implements Initializable, ControllerStage {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         username.textProperty().bind(user.userNameProperty());
+        Image image=ResourceContainer.getHead();
+        shineImage.setImage(image);
     }
     @FXML
     private void close(){
@@ -84,5 +89,21 @@ public class MainViewController implements Initializable, ControllerStage {
     @FXML
     private void username_exited() {
         username.setStyle("");
+    }
+
+    public void headEx(MouseEvent mouseEvent) {
+    }
+
+
+    public void clicked(MouseEvent mouseEvent) {
+        System.out.println("xaxaxa"+mouseEvent.getClickCount());
+        FileChooser fileChooser=new FileChooser();
+        Stage stage=new Stage();
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG","*.png"),new FileChooser.ExtensionFilter("JPG","*.jpg"));
+        File file=fileChooser.showOpenDialog(stage);
+        if (null!=file){
+//           shineImage.setImage();
+        }
     }
 }

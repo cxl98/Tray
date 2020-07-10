@@ -37,7 +37,7 @@ public class Tray {
 
             // 加载一个图片用于托盘图标的显示
 //            Image image = Toolkit.getDefaultToolkit().getImage(path+"1043767227.jpg");
-            Image image = Toolkit.getDefaultToolkit().getImage("/home/cxl/桌面/周计划/cxl/托盘/Tray/src/main/resources/1043767227.jpg");
+            Image image = Toolkit.getDefaultToolkit().getImage("/home/cxl/桌面/周计划/cxl/托盘/Tray/client/src/main/resources/main/img/icon.jpg");
             System.out.println(image);
             // 创建点击图标时的弹出菜单
             PopupMenu popupMenu = new PopupMenu();
