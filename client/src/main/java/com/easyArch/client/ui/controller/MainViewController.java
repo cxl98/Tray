@@ -5,6 +5,7 @@ import com.easyArch.client.ui.ControllerStage;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
 import com.easyArch.client.ui.container.ResourceContainer;
+import com.easyArch.client.util.ImageUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
@@ -48,6 +49,7 @@ public class MainViewController implements Initializable, ControllerStage {
         username.textProperty().bind(user.userNameProperty());
         Image image=ResourceContainer.getHead();
         shineImage.setImage(image);
+        System.out.println(shineImage.getStyle());
     }
     @FXML
     private void close(){
@@ -103,7 +105,22 @@ public class MainViewController implements Initializable, ControllerStage {
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG","*.png"),new FileChooser.ExtensionFilter("JPG","*.jpg"));
         File file=fileChooser.showOpenDialog(stage);
         if (null!=file){
-//           shineImage.setImage();
+            String path = file.getAbsoluteFile().toURI().toString();
+            System.out.println(path);
+            File image = ImageUtil.image(file);
+            System.out.println(image);
+            String string = file.getAbsoluteFile().toURI().toString();
+
+            Image image1=new Image(string);
+
+
+
+            shineImage.setImage(image1);
+//            shineImage.setPreserveRatio(true);
+//            shineImage.setFitWidth(90);
+//            shineImage.setFitHeight(100);
+//            shineImage.setX(9.0);
+//            shineImage.setY(39.0);
         }
     }
 }

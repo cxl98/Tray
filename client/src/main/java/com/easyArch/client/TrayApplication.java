@@ -20,7 +20,7 @@ public class TrayApplication extends Application {
         login.setTitle("托盘");
         uiController.loadStage(IdContainer.RegisterView, LayoutUi.RegisterView, StageStyle.UNDECORATED);
         uiController.loadStage(IdContainer.MainView, LayoutUi.MainView, StageStyle.UNDECORATED);
-        uiController.setStage(IdContainer.LoginView);
+//        uiController.setStage(IdContainer.LoginView);
 //        uiController.setStage(IdContainer.MainView);
     }
 }
