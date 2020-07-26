@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -15,10 +14,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #169ADA;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.MainViewController">
 	<children>
-		<ImageView fx:id="shineImage" layoutX="9.0" layoutY="39.0" onMouseClicked="#clicked" onMouseExited="#headEx">
-			<!--<image >-->
-				<!--<Image url="@../../main/img/xxx.png" />-->
-			<!--</image>-->
+		<ImageView fx:id="shineImage" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="40.0" onMouseClicked="#clicked" onMouseExited="#headEx">
+			<image >
+				<Image url="@../../main/img/1111.png" />
+			</image>
 			<!--<cursor>-->
 				<!--<Cursor fx:constant="HAND" />-->
 			<!--</cursor>-->
