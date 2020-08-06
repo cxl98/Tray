@@ -2,67 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3165b7b3-1cd8-4ccd-8b7c-91df92dcbdc3" name="Default Changelist" comment="resource">
-      <change afterPath="$PROJECT_DIR$/client/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/TrayApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/entry/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/file/FileListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/file/GetPath.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/file/Keyboard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/file/Peizhi.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/handler/HandlerFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/handler/LoginHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/handler/RegistryHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/handler/SendHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/ControllerStage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/LayoutUi.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/Tray$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/Tray.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/UiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/container/IdContainer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/container/ResourceContainer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/controller/LoginViewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/controller/MainViewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/ui/controller/RegistryViewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/util/I18n.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/com/easyArch/client/util/NumberUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/i18n/message.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/i18n/message.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/img/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/img/close_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/img/login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/img/loginErorr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/img/min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/img/min_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/login/xml/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/main/img/80-80shine-white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/main/img/seach/search_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/main/xml/main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/register/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/classes/register/xml/register.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/test-classes/com/test/KeyBoardLIstener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/target/test-classes/com/test/Server.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/entry/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/enums/StatusCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/handler/Handler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/netty/INettyClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/req/TrayRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/res/TrayResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/service/API.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/util/IpUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/util/PropertiesUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/target/classes/com/easeArch/common/util/TrayException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/easyArch/server/netty/TRayNettyServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/easyArch/server/netty/TrayNettyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/easyArch/server/util/PropUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mysql.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1111.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/main/resources/user.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/test/java/com/test/TestNettyServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/TrayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/TrayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/resources/main/xml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/main/xml/main.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/client/target/" />
@@ -95,23 +37,24 @@
     <session id="-745153939">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="65" />
-          <entry key="project.open.time.0" value="8" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.closed" value="86" />
+          <entry key="project.open.time.0" value="12" />
+          <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.124" value="1" />
           <entry key="project.open.time.135" value="1" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.2" value="9" />
-          <entry key="project.open.time.3" value="6" />
+          <entry key="project.open.time.2" value="13" />
+          <entry key="project.open.time.3" value="9" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="6" />
-          <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.60" value="2" />
-          <entry key="project.open.time.64" value="1" />
+          <entry key="project.open.time.5" value="8" />
+          <entry key="project.open.time.6" value="7" />
+          <entry key="project.open.time.60" value="3" />
+          <entry key="project.open.time.64" value="2" />
           <entry key="project.open.time.65" value="1" />
           <entry key="project.open.time.68" value="4" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.74" value="1" />
           <entry key="project.open.time.78" value="1" />
           <entry key="project.open.time.79" value="1" />
@@ -122,7 +65,7 @@
           <entry key="project.open.time.9" value="2" />
           <entry key="project.open.time.94" value="1" />
           <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="67" />
+          <entry key="project.opened" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -137,61 +80,61 @@
           <entry key="Resources" value="1" />
           <entry key="TrayApplication" value="1" />
           <entry key="UiController" value="1" />
-          <entry key="class" value="491" />
+          <entry key="class" value="497" />
           <entry key="css" value="5" />
-          <entry key="fxml" value="45" />
-          <entry key="gitignore" value="2" />
-          <entry key="html" value="2" />
-          <entry key="ico" value="2" />
-          <entry key="java" value="889" />
+          <entry key="fxml" value="48" />
+          <entry key="gitignore" value="3" />
+          <entry key="html" value="3" />
+          <entry key="ico" value="3" />
+          <entry key="java" value="934" />
           <entry key="jpg" value="10" />
           <entry key="js" value="3" />
           <entry key="md" value="1" />
-          <entry key="png" value="56" />
+          <entry key="png" value="60" />
           <entry key="po" value="9" />
           <entry key="pom" value="4" />
-          <entry key="properties" value="50" />
+          <entry key="properties" value="51" />
           <entry key="py" value="4" />
           <entry key="sh" value="4" />
           <entry key="sql" value="8" />
           <entry key="txt" value="7" />
-          <entry key="xml" value="51" />
+          <entry key="xml" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="4" />
-          <entry key="CLASS" value="491" />
+          <entry key="CLASS" value="497" />
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="2" />
-          <entry key="Image" value="68" />
-          <entry key="JAVA" value="889" />
+          <entry key="HTML" value="3" />
+          <entry key="Image" value="73" />
+          <entry key="JAVA" value="934" />
           <entry key="JavaScript" value="3" />
           <entry key="Manifest" value="2" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="22" />
-          <entry key="Properties" value="50" />
+          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="Properties" value="51" />
           <entry key="ResourceBundle" value="1" />
           <entry key="SQL" value="8" />
           <entry key="UML" value="8" />
-          <entry key="XML" value="100" />
+          <entry key="XML" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="10" />
+          <entry key="dummy" value="15" />
           <entry key="fxml" value="208" />
-          <entry key="java" value="13750" />
+          <entry key="java" value="13819" />
           <entry key="properties" value="116" />
           <entry key="sql" value="301" />
-          <entry key="txt" value="64" />
+          <entry key="txt" value="70" />
           <entry key="xml" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13750" />
-          <entry key="PLAIN_TEXT" value="74" />
+          <entry key="JAVA" value="13819" />
+          <entry key="PLAIN_TEXT" value="85" />
           <entry key="Properties" value="116" />
           <entry key="SQL" value="301" />
           <entry key="XML" value="513" />
@@ -202,85 +145,94 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/packages/UserLibraryPriorityComparator.class">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/TrayApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+            <state relative-caret-position="231">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/Platform.class">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/ProUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="208">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/windows/ListComPortsParser.class">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/NumberUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/windows/Platform.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/GTKLookAndFeelFixer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="60" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="60" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/Platform.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1821">
-              <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/zh-hans.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="8" selection-end-line="77" selection-end-column="25" />
+            <state relative-caret-position="132">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/zh-hant.properties">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/ImageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99" />
+            <state relative-caret-position="-165">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/UDevAdmParser.class">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/LoginViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="21" column="5" selection-start-line="12" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="1848">
+              <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/easyArch/server/mapper/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/serialize/Serializer.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/util/NetUtil.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/util/IpUtil.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/remoting/net/impl/netty_http/client/NettyHttpClient.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -319,11 +271,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/netty/impl/NettyClient.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/netty/impl/TrayNettyClient.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/netty/impl/TrayNettyClientHandler.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/netty/Client.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/easeArch/common/netty/INettyClent.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/handler/handler.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/easeArch/common/handler/handler.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/easeArch/common/handler/HandlerFactory.java" />
@@ -362,14 +309,19 @@
         <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/LoginViewController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/Tray.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/i18n/message.properties" />
-        <option value="$PROJECT_DIR$/client/src/main/resources/login/xml/login.fxml" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/container/ResourceContainer.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/main/xml/main.fxml" />
         <option value="$PROJECT_DIR$/client/pom.xml" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/ImageUtil.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/MainViewController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/TrayApplication.java" />
         <option value="$PROJECT_DIR$/client/src/test/java/com/test/Test.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/easyArch/server/util/PropUtil.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/TrayApplication.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/easeArch/common/service/API.java" />
+        <option value="$PROJECT_DIR$/client/src/main/resources/login/xml/login.fxml" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/AtuoProperties.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/PropertiesUtil.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/ProUtil.java" />
       </list>
     </option>
   </component>
@@ -405,7 +357,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="24" />
-    <option name="width" value="959" />
+    <option name="width" value="960" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -415,9 +367,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -425,28 +374,75 @@
               <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tray" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tray" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tray" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tray" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tray" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tray" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tray" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tray" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1594880093257" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../易架构/iotest" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596724448672" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/main/resources/main/img" />
-      <recent name="$PROJECT_DIR$/client/src/main/resources/main" />
-      <recent name="$PROJECT_DIR$/src/main/resources/login/img" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.easyArch.server.netty" />
+      <recent name="com.easyArch.client.netty" />
+      <recent name="com.easeArch.common.exception" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/main/resources/lib" />
@@ -462,10 +458,11 @@
       <recent name="com.easeArch.common.codec" />
       <recent name="com.easeArch.common.serialization" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.easyArch.server.netty" />
-      <recent name="com.easyArch.client.netty" />
-      <recent name="com.easeArch.common.exception" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/main/resources/main/img" />
+      <recent name="$PROJECT_DIR$/client/src/main/resources/main" />
+      <recent name="$PROJECT_DIR$/src/main/resources/login/img" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -480,13 +477,39 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="ImageUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.easyArch.client.util.ImageUtil" />
+  <component name="RunManager" selected="Application.ProUtil">
+    <configuration name="FileUi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.easyArch.client.ui.FileUi" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.easyArch.client.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.easyArch.client.util.ProUtil" />
       <module name="client" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.easyArch.client.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.easyArch.server.util.PropUtil" />
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.easyArch.server.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -500,32 +523,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.easyArch.client.ui.Tray" />
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.easyArch.client.ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TrayApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.easyArch.server.TrayApplication" />
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.easyArch.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -548,18 +545,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.TrayApplication" />
-      <item itemvalue="Application.TrayApplication (1)" />
-      <item itemvalue="Application.Tray" />
-      <item itemvalue="Application.ImageUtil" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.PropUtil" />
+      <item itemvalue="Application.FileUi" />
+      <item itemvalue="Application.ProUtil" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.ProUtil" />
         <item itemvalue="Application.TrayApplication" />
-        <item itemvalue="Application.ImageUtil" />
-        <item itemvalue="Application.TrayApplication (1)" />
-        <item itemvalue="Application.Tray" />
+        <item itemvalue="Application.FileUi" />
+        <item itemvalue="Application.PropUtil" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -640,6 +637,29 @@
       <workItem from="1594790001420" duration="8614000" />
       <workItem from="1594811838576" duration="3103000" />
       <workItem from="1594866280572" duration="2531000" />
+      <workItem from="1594909362389" duration="91000" />
+      <workItem from="1594914281207" duration="1277000" />
+      <workItem from="1594964617651" duration="646000" />
+      <workItem from="1594979363641" duration="846000" />
+      <workItem from="1594996625910" duration="1489000" />
+      <workItem from="1595079554592" duration="115000" />
+      <workItem from="1595138660348" duration="4956000" />
+      <workItem from="1595219319220" duration="649000" />
+      <workItem from="1595502567269" duration="3255000" />
+      <workItem from="1595575318839" duration="757000" />
+      <workItem from="1595597982949" duration="613000" />
+      <workItem from="1595603749798" duration="34000" />
+      <workItem from="1595768215535" duration="660000" />
+      <workItem from="1596032986772" duration="2489000" />
+      <workItem from="1596087303709" duration="2182000" />
+      <workItem from="1596172595043" duration="1005000" />
+      <workItem from="1596195131775" duration="155000" />
+      <workItem from="1596268771915" duration="670000" />
+      <workItem from="1596289605384" duration="585000" />
+      <workItem from="1596296137739" duration="81000" />
+      <workItem from="1596365997331" duration="2633000" />
+      <workItem from="1596721505451" duration="440000" />
+      <workItem from="1596723592381" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="handler">
       <created>1592644385660</created>
@@ -767,16 +787,38 @@
       <option name="project" value="LOCAL" />
       <updated>1594652528809</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ui">
+      <created>1594909399757</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1594909399758</updated>
+    </task>
+    <task id="LOCAL-00020" summary="resource">
+      <created>1595079585454</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1595079585454</updated>
+    </task>
+    <task id="LOCAL-00021" summary="配置文件">
+      <created>1595768263409</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1595768263409</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317363000" />
+    <option name="totallyTimeSpent" value="343782000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="959" height="1056" extended-state="4" />
+    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994664" visible="true" weight="0.3838604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994664" visible="true" weight="0.3088392" />
       <window_info id="Structure" order="1" sideWeight="0.50053364" side_tool="true" weight="0.39563367" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -784,8 +826,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32880098" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.64140874" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32870865" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2796158" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.56456774" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -850,13 +892,14 @@
     </ignored-roots>
     <MESSAGE value="netty" />
     <MESSAGE value="controller" />
-    <MESSAGE value="ui" />
     <MESSAGE value="file" />
     <MESSAGE value="handler" />
     <MESSAGE value="修改一些bug" />
     <MESSAGE value="server" />
+    <MESSAGE value="ui" />
     <MESSAGE value="resource" />
-    <option name="LAST_COMMIT_MESSAGE" value="resource" />
+    <MESSAGE value="配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -929,352 +972,299 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/LoadVIDPIDSpecificPreferences.class">
+    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/zh-hans.properties" />
+    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/logo.png" />
+    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/hardware.png" />
+    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/logo.ico" />
+    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/zh-hant.properties" />
+    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/UDevAdmParser.class" />
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/TestPro.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/DefaultUncaughtExceptionHandler.class">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/easyArch/server/util/PropUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../1.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/netty/TrayClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/easeArch/common/service/API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="108" selection-start-line="3" selection-start-column="108" selection-end-line="3" selection-end-column="108" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/LayoutUi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/MainViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2772">
+          <caret line="111" column="54" selection-start-line="111" selection-start-column="54" selection-end-line="111" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/easyArch/server/TrayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/mysql.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/ControllerStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/main/xml/main.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/login/xml/login.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/Tray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/FileUi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/login/img/login.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3432">
+          <caret line="104" column="22" selection-start-line="102" selection-start-column="8" selection-end-line="106" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/login/img/loginErorr.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jdk1.8.0_201/src.zip!/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2772">
+          <caret line="122" column="13" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/RegistryViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/container/IdContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/container/ResourceContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jdk1.8.0_201/src.zip!/java/lang/SecurityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1494">
+          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/java/jdk1.8.0_201/src.zip!/java/net/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="438" column="11" lean-forward="true" selection-start-line="438" selection-start-column="11" selection-end-line="438" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/remoting/net/impl/netty_http/client/NettyHttpConnectClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/remoting/net/impl/netty_http/client/NettyHttpClientHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/handler/LoginHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/easyArch/server/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/Constants.class">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/easyArch/server/server/UserServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/ui/controller/LoginViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/easyArch/server/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/serialize/Serializer.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/CompilerUtils.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/util/NetUtil.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/CompilerProgressListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/analytics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/TestPro.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/KeyBoardLIstener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1154">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/Server.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/util/IpUtil.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="198">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/Scene.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/cxl/rpc-core/1.0-SNAPSHOT/rpc-core-1.0-SNAPSHOT.jar!/com/cxl/rpc/remoting/net/impl/netty_http/client/NettyHttpClient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="192" column="11" selection-start-line="192" selection-start-column="11" selection-end-line="192" selection-end-column="11" />
+        <state relative-caret-position="198">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/PropertiesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/TrayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/ProUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <element signature="e#6631#6632#0" expanded="true" />
-            <element signature="e#6713#6714#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/java/jdk1.8.0_201/javafx-src.zip!/javafx/concurrent/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="148" column="11" lean-forward="true" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/test/java/com/test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="854">
-          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/tools/DoubleQuotedArgumentsOnWindowsCommandLine.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="30" column="5" selection-start-line="12" selection-start-column="3" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/filefilters/OnlyFilesWithExtension.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="10" column="59" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/filefilters/OnlyDirs.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/BoardCloudResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17292">
-          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/CommandlineParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17985">
-          <caret line="367" column="22" lean-forward="true" selection-start-line="367" selection-start-column="22" selection-end-line="367" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/FileUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9933">
-          <caret line="240" column="26" lean-forward="true" selection-start-line="240" selection-start-column="26" selection-end-line="240" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/NetUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="51" column="65" lean-forward="true" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/OSUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/PreferencesHelper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/PreferencesMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/PreferencesMapException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="10" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/ProcessUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/StringReplacer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3696">
-          <caret line="120" column="61" selection-start-line="120" selection-start-column="61" selection-end-line="120" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/UserNotifier.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/ArduinoHelper.class">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/NumberUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/Compiler.class">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/easyArch/client/util/ImageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        <state relative-caret-position="-165">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/debug/MessageConsumer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/helpers/BasicUserNotifier.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/contributions/GPGDetachedSignatureVerifier.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/edazdarevic/commons/net/CIDRUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="90" column="73" lean-forward="true" selection-start-line="90" selection-start-column="73" selection-end-line="90" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/utils/network/FileDownloaderCache.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/cc/arduino/utils/network/HttpConnectionManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/Sketch.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/BaseNoGui.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/packages/LegacyUserLibrary.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/packages/LibraryList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="106" column="13" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/packages/UserLibrary.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6006">
-          <caret line="235" column="18" selection-start-line="235" selection-start-column="18" selection-end-line="235" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/packages/UserLibraryFolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/packages/UserLibraryPriorityComparator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/Platform.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/windows/ListComPortsParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/windows/Platform.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/GTKLookAndFeelFixer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="60" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/UDevAdmParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="21" column="5" selection-start-line="12" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/processing/app/linux/Platform.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1821">
-          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/zh-hant.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/client/src/main/resources/lib/Mixly.jar!/zh-hans.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="8" selection-end-line="77" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
