@@ -13,4 +13,5 @@ public class LayoutUi {
      * 主界面
      */
     public static final String MainView = "main/xml/main.fxml";
+    public static final String  FriendItem="main/xml/friendItem.fxml";
 }
