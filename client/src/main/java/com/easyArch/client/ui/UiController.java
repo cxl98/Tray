@@ -63,6 +63,19 @@ public class UiController {
         return result;
     }
 
+
+    @SuppressWarnings("unchecked")
+    public <T> T load(String resource, Class<T> clazz) {
+        try{
+            URL url = Thread.currentThread().getContextClassLoader().getResource(resource);
+            FXMLLoader loader = new FXMLLoader(url);
+            return (T)loader.load();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public boolean switchStage(String toShow, String toClose) {
         Stage stageByName = getStageByName(toClose);
         Stage stage = setStage(toShow);
