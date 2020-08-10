@@ -5,6 +5,7 @@ import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
 import com.easeArch.common.handler.Handler;
 import com.easyArch.client.handler.HandlerFactory;
+import com.easyArch.client.manager.FriendManager;
 import com.easyArch.client.ui.ControllerStage;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -80,6 +81,10 @@ public class LoginViewController implements Initializable, ControllerStage {
 //                new Thread(()->{
                     UiController uiController=UiController.getInstance();
                     uiController.switchStage(IdContainer.MainView,IdContainer.LoginView);
+                FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
+                loginProgress.setVisible(true);
+
+
 //                }).start();
             }else{
                 errorPane.setVisible(true);
