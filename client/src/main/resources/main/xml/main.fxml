@@ -16,7 +16,7 @@
 	<children>
 		<ImageView fx:id="shineImage" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="40.0" onMouseClicked="#clicked" onMouseExited="#headEx">
 			<image >
-				<Image url="@../../main/img/1111.png" />
+				<Image url="@../../login/img/logo.png" />
 			</image>
 			<!--<cursor>-->
 				<!--<Cursor fx:constant="HAND" />-->
