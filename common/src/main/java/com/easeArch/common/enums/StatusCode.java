@@ -56,5 +56,6 @@ public enum  StatusCode {
     public static void main(String[] args) {
         String macth = macth("1");
         System.out.println(macth);
+        System.out.println(StatusCode.SUCCESS.code);
     }
 }

@@ -6,7 +6,11 @@ import com.easeArch.common.enums.StatusCode;
 import com.easeArch.common.handler.Handler;
 import com.easyArch.client.handler.HandlerFactory;
 import com.easyArch.client.manager.FriendManager;
+import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
+
+import com.easyArch.client.ui.LayoutUi;
+
 import com.easyArch.client.ui.Tray;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -17,8 +21,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 
 import javax.swing.*;
 import java.net.URL;
@@ -48,7 +55,8 @@ public class LoginViewController implements Initializable, ControllerStage {
     @FXML
     private Label errorTips;
 
-    //    private UiController uiController;
+    private User user;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         login.disableProperty().bind(
@@ -70,6 +78,7 @@ public class LoginViewController implements Initializable, ControllerStage {
         final String name = username.getText();
         final String text = password.getText();
         if (!"".equals(name) || !"".equals(text)) {
+
             System.out.println("=================");
             System.out.println(name);
             System.out.println(text);
@@ -81,32 +90,57 @@ public class LoginViewController implements Initializable, ControllerStage {
             Handler login = factory.handler("login");
             Object handler = login.handler(user);
 
-            if ("1".equals(handler)){
+            if ("1".equals(handler)) {
                 getStage().close();
-                new Thread(()-> SwingUtilities.invokeLater(Tray::createGUI)).start();
-              new Thread(()->{
-                    UiController uiController=UiController.getInstance();
-                    uiController.switchStage(IdContainer.MainView,IdContainer.LoginView);
-                FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
-                loginProgress.setVisible(true);
+                new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
+                new Thread(() -> {
+                    UiController uiController = UiController.getInstance();
+                    uiController.switchStage(IdContainer.MainView, IdContainer.LoginView);
+                    FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
+                    loginProgress.setVisible(true);
                 }).start();
-            }else{
-                errorPane.setVisible(true);
-                errorTips.setText(StatusCode.macth((String) handler));
+            } else {
+
+                Object object = isObject(name, text);
+                if (StatusCode.SUCCESS.getCode().equals(object)) {
+                    getStage().close();
+                    UserManager.getInstance().addUser(user);
+                    new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
+                    gotoMain(user);
+                } else {
+
+                    errorPane.setVisible(true);
+                    errorTips.setText(StatusCode.macth((String) object));
+                }
             }
-
         }
+    }
 
+    private Object isObject(String name, String pwd) {
+        user = new User();
+        user.setUsername(name);
+        user.setPassword(pwd);
+        HandlerFactory factory = HandlerFactory.getFactory();
+        Handler login = factory.handler("login");
+        Object handler = login.handler(user);
+        return handler;
+    }
+
+    private void gotoMain(User user) {
+        UiController uiController = UiController.getInstance();
+        uiController.loadStage(IdContainer.MainView, LayoutUi.MainView, StageStyle.UNDECORATED);
+        uiController.switchStage(IdContainer.MainView, IdContainer.LoginView);
+        FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
     }
 
     @FXML
     public void login_en() {
-        login.setStyle("-fx-background-radius:4;-fx-background-color: #097299");
+        login.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
     }
 
     @FXML
     public void login_ex() {
-        login.setStyle("-fx-background-radius:4;-fx-background-color: #2d50bb");
+        login.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
     }
 
     @FXML
@@ -158,3 +192,5 @@ public class LoginViewController implements Initializable, ControllerStage {
         uiController.switchStage(IdContainer.RegisterView, IdContainer.LoginView);
     }
 }
+
+

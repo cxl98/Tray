@@ -1,11 +1,11 @@
 package com.easyArch.client.manager;
 
+import com.easeArch.common.constants.Constants;
 import com.easeArch.common.entry.FriendItemVo;
-import com.easeArch.common.util.ImageUtil;
-import com.easyArch.client.constants.Constants;
 import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
+import com.easyArch.client.util.ImageUtil;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -14,23 +14,26 @@ import javafx.stage.Stage;
 
 import java.util.*;
 
-//import com.sun.imageio.plugins.common.ImageUtil;
 
 public class FriendManager {
 
     private static FriendManager instance = new FriendManager();
-    private  static Map<Long, FriendItemVo> friends = new HashMap<>();
+    private static Map<Long, FriendItemVo> friends = new HashMap<>();
     private static Map<Integer, String> groupNames = new HashMap<>();
     private static TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
 
     static {
         //好友分组
-        groupNames.put(1,"我的好友");
-        groupNames.put(2,"同学");
+        groupNames.put(1, "我的好友");
+        groupNames.put(2, "同学");
+
 
         List<FriendItemVo> list1=new ArrayList<>();
         List<FriendItemVo>  list2=new ArrayList<>();
          FriendItemVo friendItemVo = new FriendItemVo();
+
+
+
         //好友属性
         friendItemVo.setUserId(1000);
         friendItemVo.setRemark("xxx");
@@ -55,6 +58,7 @@ public class FriendManager {
         friendItemVo2.setGroup(2);
 
 
+
         list1.add(0,friendItemVo);
         list1.add(1,friendItemVo1);
 
@@ -66,12 +70,21 @@ public class FriendManager {
         friends.put(1000L,friendItemVo);
         friends.put(1001L,friendItemVo1);
         friends.put(1002L,friendItemVo2);
+
+        list1.add(0, friendItemVo);
+        list1.add(1, friendItemVo1);
+        list1.add(2, friendItemVo2);
+        groupFriends.put(1, list1);
+
+        friends.put(1000L, friendItemVo);
+        friends.put(1000L, friendItemVo1);
+        friends.put(1000L, friendItemVo2);
+
     }
 
     /**
      * 分组好友视图
      */
-    
 
 
     public static FriendManager getInstance() {
@@ -100,6 +113,7 @@ public class FriendManager {
 
     /**
      * 好友下线刷新
+     *
      * @param friendId
      */
     public void onFriendLogout(long friendId) {
@@ -126,7 +140,6 @@ public class FriendManager {
     }
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
-//        StageController stageController = UiBaseService.INSTANCE.getStageController();
         UiController stageController = UiController.getInstance();
         Stage stage = stageController.getStageByName(IdContainer.MainView);
 
@@ -143,14 +156,16 @@ public class FriendManager {
         }
 
 
-    }	/**
+    }
+
+    /**
      * 调整成好友分组结构
      */
     private void rangeToGroupFriends(List<FriendItemVo> friendItems) {
 //        this.groupFriends.clear();
         TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
-        for (FriendItemVo item:friendItems) {
-            int groupId= item.getGroup();
+        for (FriendItemVo item : friendItems) {
+            int groupId = item.getGroup();
             List<FriendItemVo> frendsByGroup = groupFriends.get(groupId);
             if (frendsByGroup == null) {
                 //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
@@ -174,26 +189,20 @@ public class FriendManager {
         ListView<Node> listView = new ListView<Node>();
         int onlineCount = 0;
         UiController stageController = UiController.getInstance();
-        for (FriendItemVo item:friendItems) {
+        for (FriendItemVo item : friendItems) {
             if (item.isOnline()) {
                 onlineCount++;
             }
-//         uiController.loadStage(IdContainer.RegisterView, LayoutUi.RegisterView, StageStyle.UNDECORATED);
             Pane pane = stageController.load(LayoutUi.FriendItem, Pane.class);
 
             decorateFriendItem(pane, item);
             listView.getItems().add(pane);
         }
 
-        bindDoubleClickEvent(listView);
-        String groupInfo = groupName + " " + onlineCount+"/"+friendItems.size();
+        String groupInfo = groupName + " " + onlineCount + "/" + friendItems.size();
         TitledPane tp = new TitledPane(groupInfo, listView);
         container.getPanes().add(tp);
     }
-
-
-
-
 
 
     private void decorateFriendItem(Pane itemUi, FriendItemVo friendVo) {
@@ -203,7 +212,7 @@ public class FriendManager {
         usernameUi.setText(friendVo.getUserName());
 
         //隐藏域，聊天界面用
-        Label userIdUi = (Label)itemUi.lookup("#friendId");
+        Label userIdUi = (Label) itemUi.lookup("#friendId");
         userIdUi.setText(String.valueOf(friendVo.getUserId()));
 
         ImageView headImage = (ImageView) itemUi.lookup("#headIcon");
@@ -213,51 +222,6 @@ public class FriendManager {
         }
 
     }
-
-
-    private void bindDoubleClickEvent(ListView<Node> listView) {
-//        listView.setOnMouseClicked(new DoubleClickEventHandler<Event>() {
-//            @Override
-//            public void handle(Event event) {
-//                if (this.checkVaild()) {
-//                    ListView<Node> view = (ListView<Node>) event.getSource();
-//                    Node selectedItem = view.getSelectionModel().getSelectedItem();
-//                    if (selectedItem == null)
-//                        return;
-//                    Pane pane = (Pane) selectedItem;
-//                    Label userIdUi = (Label)pane.lookup("#friendId");
-//
-//                    Long friendId = Long.parseLong(userIdUi.getText());
-//                    FriendItemVo targetFriend = friends.get(friendId);
-//
-//                     Long selfId =Long.parseLong( User.getInstance().getUid());
-//                    if (friendId == selfId) {
-//                        //不能跟自己聊天
-//                        return;
-//                    }
-//                    if (targetFriend != null) {
-////                        openChat2PointPanel(targetFriend);
-//                    }
-//                }
-//            }
-//        });
-    }
-
-
-//    private void openChat2PointPanel(FriendItemVo targetFriend) {
-//        UiController stageController = UiController.getInstance();
-//
-////        StageController stageController = UiBaseService.INSTANCE.getStageController();
-////        Stage chatStage = stageController.setStage(R.id.ChatToPoint);
-//
-//        Label userIdUi = (Label)chatStage.getScene().getRoot().lookup("#userIdUi");
-//        userIdUi.setText(String.valueOf(targetFriend.getUserId()));
-//        Hyperlink userNameUi = (Hyperlink)chatStage.getScene().getRoot().lookup("#userName");
-////        Label signatureUi = (Label)chatStage.getScene().getRoot().lookup("#signature");
-//        userNameUi.setText(targetFriend.getFullName());
-//        signatureUi.setText(targetFriend.getSignature());
-//
-//    }
 
 
 }

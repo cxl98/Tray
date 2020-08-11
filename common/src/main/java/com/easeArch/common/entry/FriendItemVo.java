@@ -16,13 +16,6 @@ public class FriendItemVo {
     /** 分组备注 */
     private String groupName;
 
-//    public String getUserId() {
-//        return userId;
-//    }
-//
-//    public void setUserId(String userId) {
-//        this.userId = userId;
-//    }
 
 //    public void setOnline(Byte online) {
 //        this.online = online;

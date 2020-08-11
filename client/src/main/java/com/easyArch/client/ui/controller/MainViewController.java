@@ -1,11 +1,14 @@
 package com.easyArch.client.ui.controller;
 
-import com.easyArch.client.entry.User;
+import com.easeArch.common.entry.User;
+import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
 import com.easyArch.client.ui.container.ResourceContainer;
 import com.easyArch.client.util.ImageUtil;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
@@ -37,7 +40,6 @@ public class MainViewController implements Initializable, ControllerStage {
     private Label username;
     @FXML
     private Label signature;
-    private User user=new User();
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
@@ -46,10 +48,14 @@ public class MainViewController implements Initializable, ControllerStage {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        username.textProperty().bind(user.userNameProperty());
+        UserManager instance = UserManager.getInstance();
+        User user = instance.getUser();
+        String username = user.getUsername();
+        SimpleStringProperty simpleStringProperty = new SimpleStringProperty();
+        simpleStringProperty.set(username);
+        this.username.textProperty().bind(simpleStringProperty);
         Image image=ResourceContainer.getHead();
         shineImage.setImage(image);
-        System.out.println(shineImage.getStyle());
     }
     @FXML
     private void close(){
@@ -83,22 +89,19 @@ public class MainViewController implements Initializable, ControllerStage {
         getStage().setIconified(true);
     }
 
-    @FXML
-    private void username_entered() {
-        username.setStyle("-fx-background-radius:4;-fx-background-color: #136f9b");
-    }
-
-    @FXML
-    private void username_exited() {
-        username.setStyle("");
-    }
-
-    public void headEx(MouseEvent mouseEvent) {
-    }
+//    @FXML
+//    private void username_entered() {
+//        username.setStyle("-fx-background-radius:4;-fx-background-color: #136f9b");
+//    }
+//
+//    @FXML
+//    private void username_exited() {
+//        username.setStyle("");
+//    }
 
 
-    public void clicked(MouseEvent mouseEvent) {
-        System.out.println("xaxaxa"+mouseEvent.getClickCount());
+
+    public void clicked() {
         FileChooser fileChooser=new FileChooser();
         Stage stage=new Stage();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
@@ -116,11 +119,6 @@ public class MainViewController implements Initializable, ControllerStage {
 
 
             shineImage.setImage(image1);
-//            shineImage.setPreserveRatio(true);
-//            shineImage.setFitWidth(90);
-//            shineImage.setFitHeight(100);
-//            shineImage.setX(9.0);
-//            shineImage.setY(39.0);
         }
     }
 }

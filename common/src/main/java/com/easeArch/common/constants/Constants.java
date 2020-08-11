@@ -7,5 +7,8 @@ public class Constants {
     public static final byte OFFLINE_STATUS = 0;
     /** 在线状态 */
     public static final byte ONLINE_STATUS = 1;
+    /**
+     *
+     */
 
 }
