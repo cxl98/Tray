@@ -8,7 +8,7 @@ public class FriendItemVo {
     /** 备注 */
     private String remark;
 //    /** 在线状态 {@link Constants#ONLINE_STATUS} */
-    private Byte  online;
+    private byte  online;
     /** 昵称 */
     private String userName;
     /** 所属好友分组 */
@@ -24,9 +24,9 @@ public class FriendItemVo {
 //        this.userId = userId;
 //    }
 
-    public void setOnline(Byte online) {
-        this.online = online;
-    }
+//    public void setOnline(Byte online) {
+//        this.online = online;
+//    }
 
     public int getGroup() {
         return group;
@@ -52,9 +52,9 @@ public class FriendItemVo {
         this.userId = userId;
     }
 
-    public Byte getOnline() {
-        return online;
-    }
+//    public Byte getOnline() {
+//        return online;
+//    }
 
     public void setOnline(byte online) {
         this.online = online;

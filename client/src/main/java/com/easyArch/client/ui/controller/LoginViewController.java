@@ -7,6 +7,7 @@ import com.easeArch.common.handler.Handler;
 import com.easyArch.client.handler.HandlerFactory;
 import com.easyArch.client.manager.FriendManager;
 import com.easyArch.client.ui.ControllerStage;
+import com.easyArch.client.ui.Tray;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
 import com.easyArch.client.ui.container.ResourceContainer;
@@ -19,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -68,6 +70,10 @@ public class LoginViewController implements Initializable, ControllerStage {
         final String name = username.getText();
         final String text = password.getText();
         if (!"".equals(name) || !"".equals(text)) {
+            System.out.println("=================");
+            System.out.println(name);
+            System.out.println(text);
+            System.out.println("==================");
             User user = new User();
             user.setUsername(name);
             user.setPassword(text);
@@ -77,15 +83,13 @@ public class LoginViewController implements Initializable, ControllerStage {
 
             if ("1".equals(handler)){
                 getStage().close();
-//                new Thread(()-> SwingUtilities.invokeLater(Tray::createGUI)).start();
-//                new Thread(()->{
+                new Thread(()-> SwingUtilities.invokeLater(Tray::createGUI)).start();
+              new Thread(()->{
                     UiController uiController=UiController.getInstance();
                     uiController.switchStage(IdContainer.MainView,IdContainer.LoginView);
                 FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
                 loginProgress.setVisible(true);
-
-
-//                }).start();
+                }).start();
             }else{
                 errorPane.setVisible(true);
                 errorTips.setText(StatusCode.macth((String) handler));

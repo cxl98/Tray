@@ -29,7 +29,8 @@ public class FriendManager {
         groupNames.put(2,"同学");
 
         List<FriendItemVo> list1=new ArrayList<>();
-        FriendItemVo friendItemVo = new FriendItemVo();
+        List<FriendItemVo>  list2=new ArrayList<>();
+         FriendItemVo friendItemVo = new FriendItemVo();
         //好友属性
         friendItemVo.setUserId(1000);
         friendItemVo.setRemark("xxx");
@@ -54,15 +55,17 @@ public class FriendManager {
         friendItemVo2.setGroup(2);
 
 
-
         list1.add(0,friendItemVo);
         list1.add(1,friendItemVo1);
-        list1.add(2,friendItemVo2);
+
+
+        list2.add(0,friendItemVo2);
         groupFriends.put(1,list1);
+        groupFriends.put(0,list2);
 
         friends.put(1000L,friendItemVo);
-        friends.put(1000L,friendItemVo1);
-        friends.put(1000L,friendItemVo2);
+        friends.put(1001L,friendItemVo1);
+        friends.put(1002L,friendItemVo2);
     }
 
     /**
@@ -82,7 +85,7 @@ public class FriendManager {
      */
 
 
-    public void onFriendLogin(long friendId) {
+    public void onFriendLogin(Long friendId) {
         //把自己从自己所有好友的map集合里面查找出来
 //        每个用户都有自己的全部好友的map集合其中包括自己的id和信息
         FriendItemVo friend = friends.get(friendId);
@@ -90,8 +93,6 @@ public class FriendManager {
             friend.setOnline(Constants.ONLINE_STATUS);
             //若该用户存在把他的所有的好友提取出来存到list里面
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
-
-
             receiveFriendsList(friendItems);
         }
     }
@@ -112,10 +113,11 @@ public class FriendManager {
 
 
     public void receiveFriendsList(List<FriendItemVo> friendItems) {
-        friends.clear();
+//        friends.clear();
         for (FriendItemVo item : friendItems) {
             friends.put(item.getUserId(), item);
         }
+
         rangeToGroupFriends(friendItems);
 
 //        UiBaseService.INSTANCE.runTaskInFxThread(() -> {
@@ -154,12 +156,13 @@ public class FriendManager {
                 //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
                 frendsByGroup = new ArrayList<>();
                 groupFriends.put(groupId, frendsByGroup);
-            }
-			/*
+                	/*
 			*
 		     查询出该用户有几种好友分组
 			* */
-            this.groupNames.put(groupId, item.getGroupName());
+                this.groupNames.put(groupId, item.getGroupName());
+            }
+
 //			把相同groupid的好友放在同一个group里面
             frendsByGroup.add(item);
         }
