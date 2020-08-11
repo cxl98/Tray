@@ -78,42 +78,18 @@ public class LoginViewController implements Initializable, ControllerStage {
         final String name = username.getText();
         final String text = password.getText();
         if (!"".equals(name) || !"".equals(text)) {
-
-            System.out.println("=================");
-            System.out.println(name);
-            System.out.println(text);
-            System.out.println("==================");
-            User user = new User();
-            user.setUsername(name);
-            user.setPassword(text);
-            HandlerFactory factory = HandlerFactory.getFactory();
-            Handler login = factory.handler("login");
-            Object handler = login.handler(user);
-
-            if ("1".equals(handler)) {
+            Object object = isObject(name, text);
+            if (StatusCode.SUCCESS.getCode().equals(object)) {
                 getStage().close();
+                UserManager.getInstance().addUser(user);
                 new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
-                new Thread(() -> {
-                    UiController uiController = UiController.getInstance();
-                    uiController.switchStage(IdContainer.MainView, IdContainer.LoginView);
-                    FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
-                    loginProgress.setVisible(true);
-                }).start();
+                gotoMain(user);
             } else {
-
-                Object object = isObject(name, text);
-                if (StatusCode.SUCCESS.getCode().equals(object)) {
-                    getStage().close();
-                    UserManager.getInstance().addUser(user);
-                    new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
-                    gotoMain(user);
-                } else {
-
-                    errorPane.setVisible(true);
-                    errorTips.setText(StatusCode.macth((String) object));
-                }
+                errorPane.setVisible(true);
+                errorTips.setText(StatusCode.macth((String) object));
             }
         }
+
     }
 
     private Object isObject(String name, String pwd) {
@@ -192,5 +168,3 @@ public class LoginViewController implements Initializable, ControllerStage {
         uiController.switchStage(IdContainer.RegisterView, IdContainer.LoginView);
     }
 }
-
-
