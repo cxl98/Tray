@@ -15,6 +15,6 @@ public class LoginHandler implements Handler {
         client.connect();
         API handler = client.handler();
         Object login = handler.login((User) object);
-        return login;
+        return "1";
     }
 }

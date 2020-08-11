@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -14,13 +15,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #169ADA;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.MainViewController">
 	<children>
-		<ImageView fx:id="shineImage" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="40.0" onMouseClicked="#clicked" onMouseExited="#headEx">
-			<image >
+		<ImageView fx:id="shineImage" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="40.0" onMouseClicked="#clicked">
+			<image>
 				<Image url="@../../login/img/logo.png" />
 			</image>
-			<!--<cursor>-->
-				<!--<Cursor fx:constant="HAND" />-->
-			<!--</cursor>-->
+			<cursor>
+				<Cursor fx:constant="HAND" />
+			</cursor>
 		</ImageView>
 		<TabPane layoutY="153.0" prefHeight="519.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
 			<tabs>
@@ -54,7 +55,7 @@
 				<Image url="@../../login/img/close.png" />
 			</image>
 		</ImageView>
-		<Label fx:id="username" contentDisplay="CENTER" layoutX="9.0" layoutY="18.0" onMouseEntered="#username_entered" onMouseExited="#username_exited" text="username" textFill="WHITE">
+		<Label fx:id="username" contentDisplay="CENTER" layoutX="120.0" layoutY="29.0" text="username" textFill="BLACK">
 			<font>
 				<Font size="20.0" />
 			</font>
@@ -62,14 +63,14 @@
 				<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
 			</padding>
 		</Label>
-		<!--<Label fx:id="signature" layoutX="95.0" layoutY="66.0" onMouseEntered="#autograph_entered" onMouseExited="#autograph_exited" prefHeight="18.0" prefWidth="193.0" text="" textFill="WHITE">-->
-			<!--<font>-->
-				<!--<Font size="17.0" />-->
-			<!--</font>-->
-			<!--<padding>-->
-				<!--<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />-->
-			<!--</padding>-->
-		<!--</Label>-->
+		<Label fx:id="signature" layoutX="95.0" layoutY="66.0"  prefHeight="18.0" prefWidth="193.0" text="" textFill="WHITE">
+			<font>
+				<Font size="17.0" />
+			</font>
+			<padding>
+				<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
+			</padding>
+		</Label>
 
 	</children>
 </Pane>

@@ -1,5 +1,9 @@
 package com.easyArch.client.util;
 
+import javafx.scene.image.PixelReader;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
 import org.apache.commons.lang.StringUtils;
 
 import javax.imageio.ImageIO;
@@ -54,6 +58,24 @@ public class ImageUtil {
             ImageIO.write(newImage, suffix, file);
         }
         return file;
+    }
+    /**
+     * 转化为灰度图
+     * @throws IOException
+     */
+    public static javafx.scene.image.Image convertToGray(javafx.scene.image.Image image) {
+        PixelReader pixelReader = image.getPixelReader();
+        WritableImage grayImage = new WritableImage((int) image.getWidth(), (int) image.getHeight());
+        PixelWriter pixelWriter = grayImage.getPixelWriter();
+
+        for (int y = 0; y < image.getHeight(); y++) {
+            for (int x = 0; x < image.getWidth(); x++) {
+                Color color = pixelReader.getColor(x, y);
+                color = color.grayscale();
+                pixelWriter.setColor(x, y, color);
+            }
+        }
+        return grayImage;
     }
 
     public static void main(String[] args) {
