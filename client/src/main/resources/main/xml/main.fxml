@@ -3,10 +3,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,7 +26,19 @@
 				<Cursor fx:constant="HAND" />
 			</cursor>
 		</ImageView>
-		<TabPane layoutY="153.0" prefHeight="519.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
+
+
+		<TabPane layoutY="178.0" prefHeight="494.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+
+				<Tab text="%main.tab.look">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #E4E4E4;" />
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+		<TabPane layoutY="178.0" prefHeight="494.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
 			<tabs>
 				<Tab text="%main.tab.friend">
 					<content>
@@ -63,7 +78,7 @@
 				<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
 			</padding>
 		</Label>
-		<Label fx:id="signature" layoutX="95.0" layoutY="66.0"  prefHeight="18.0" prefWidth="193.0" text="" textFill="WHITE">
+		<Label fx:id="signature" layoutX="95.0" layoutY="66.0" prefHeight="18.0" prefWidth="193.0" text="" textFill="WHITE">
 			<font>
 				<Font size="17.0" />
 			</font>
@@ -71,6 +86,9 @@
 				<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
 			</padding>
 		</Label>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" />
+      <TextField layoutX="15.0" layoutY="150.0" prefHeight="28.0" prefWidth="234.0" />
+      <Hyperlink layoutX="237.0" layoutY="151.0" />
 
 	</children>
 </Pane>
