@@ -165,11 +165,11 @@ public class FriendManager {
                 frendsByGroup = new ArrayList<>();
                 groupFriends.put(groupId, frendsByGroup);
                 	/*
-=======
+
             List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
             //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
             /*
->>>>>>> cxl/master
+
 			*
 		     查询出该用户有几种好友分组
 			* */
