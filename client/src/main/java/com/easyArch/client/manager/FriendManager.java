@@ -59,6 +59,7 @@ public class FriendManager {
 
 
 
+
         friends.put("1000",friendItemVo);
         friends.put("1001",friendItemVo1);
 
@@ -158,7 +159,7 @@ public class FriendManager {
         for (FriendItemVo item : friendItems) {
             int groupId = item.getGroup();
 
-            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId,k -> new ArrayList<>());
+            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId,k-> new ArrayList<>());
             if (frendsByGroup == null) {
                 //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
                 frendsByGroup = new ArrayList<>();

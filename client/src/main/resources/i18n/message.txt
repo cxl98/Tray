@@ -25,10 +25,6 @@ main.head.seach=搜索：联系人、多人聊天、群
 main.tab.friend=好友
 main.tab.group=群
 main.tab.recent=最近
-main.tab.look=查找
-
-
-
 
 chat.loadmore=加载更多
 chat.send=发送

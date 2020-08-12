@@ -8,9 +8,7 @@ import com.easyArch.client.handler.HandlerFactory;
 import com.easyArch.client.manager.FriendManager;
 import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
-
 import com.easyArch.client.ui.LayoutUi;
-
 import com.easyArch.client.ui.Tray;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -21,12 +19,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
+import javax.management.openmbean.ArrayType;
 import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
