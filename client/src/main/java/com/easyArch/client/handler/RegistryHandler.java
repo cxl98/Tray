@@ -12,7 +12,6 @@ public class RegistryHandler implements Handler {
         client.setAddress("127.0.0.1:8888");
         client.connect();
         API handler = client.handler();
-        Object registry = handler.registry((User) object);
-        return registry;
+        return handler.registry((User) object);
     }
 }

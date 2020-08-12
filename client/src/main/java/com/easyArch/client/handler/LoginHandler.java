@@ -14,7 +14,6 @@ public class LoginHandler implements Handler {
         client.setAddress("127.0.0.1:8888");
         client.connect();
         API handler = client.handler();
-        Object login = handler.login((User) object);
-        return "1";
+        return handler.login((User) object);
     }
 }

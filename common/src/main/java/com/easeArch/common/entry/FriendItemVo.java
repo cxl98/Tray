@@ -4,7 +4,7 @@ package com.easeArch.common.entry;
 import com.easeArch.common.constants.Constants;
 
 public class FriendItemVo {
-    private long  userId;
+    private String  userId;
     /** 备注 */
     private String remark;
 //    /** 在线状态 {@link Constants#ONLINE_STATUS} */
@@ -37,11 +37,11 @@ public class FriendItemVo {
         this.groupName = groupName;
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -71,5 +71,17 @@ public class FriendItemVo {
 
     public boolean isOnline() {
         return this.online == Constants.ONLINE_STATUS;
+    }
+
+    @Override
+    public String toString() {
+        return "FriendItemVo{" +
+                "userId=" + userId +
+                ", remark='" + remark + '\'' +
+                ", online=" + online +
+                ", userName='" + userName + '\'' +
+                ", group=" + group +
+                ", groupName='" + groupName + '\'' +
+                '}';
     }
 }

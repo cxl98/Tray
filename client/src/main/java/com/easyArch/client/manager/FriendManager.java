@@ -18,49 +18,38 @@ import java.util.*;
 public class FriendManager {
 
     private static FriendManager instance = new FriendManager();
-    private static Map<Long, FriendItemVo> friends = new HashMap<>();
+    private static Map<String, FriendItemVo> friends = new HashMap<>();
     private static Map<Integer, String> groupNames = new HashMap<>();
     private static TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
 
     static {
         //好友分组
-        groupNames.put(1, "我的好友");
-        groupNames.put(2, "同学");
 
         List<FriendItemVo> list1 = new ArrayList<>();
         FriendItemVo friendItemVo = new FriendItemVo();
         //好友属性
-        friendItemVo.setUserId(1000);
+        friendItemVo.setUserId("1000");
         friendItemVo.setRemark("xxx");
-//        friendItemVo.setOnline(Constants.ONLINE_STATUS);
+        friendItemVo.setOnline(Constants.ONLINE_STATUS);
         friendItemVo.setUserName("czt");
         friendItemVo.setGroup(1);
+        friendItemVo.setGroupName("我的好友");
         //============================
 
 
         FriendItemVo friendItemVo1 = new FriendItemVo();
-        friendItemVo1.setUserId(1000);
+        friendItemVo1.setUserId("1001");
         friendItemVo1.setRemark("yyy");
-//        friendItemVo1.setOnline(Constants.ONLINE_STATUS);
+        friendItemVo1.setOnline(Constants.ONLINE_STATUS);
         friendItemVo1.setUserName("cwj");
         friendItemVo1.setGroup(1);
-
-        FriendItemVo friendItemVo2 = new FriendItemVo();
-        friendItemVo2.setUserId(1000);
-        friendItemVo2.setRemark("yyy");
-//        friendItemVo1.setOnline(Constants.ONLINE_STATUS);
-        friendItemVo2.setUserName("ckg");
-        friendItemVo2.setGroup(2);
+        friendItemVo1.setGroupName("我的好友");
 
 
-        list1.add(0, friendItemVo);
-        list1.add(1, friendItemVo1);
-        list1.add(2, friendItemVo2);
-        groupFriends.put(1, list1);
-
-        friends.put(1000L, friendItemVo);
-        friends.put(1000L, friendItemVo1);
-        friends.put(1000L, friendItemVo2);
+        list1.add(friendItemVo);
+        list1.add(friendItemVo1);
+        friends.put("1000",friendItemVo);
+        friends.put("1001",friendItemVo1);
     }
 
     /**
@@ -79,7 +68,7 @@ public class FriendManager {
      */
 
 
-    public void onFriendLogin(long friendId) {
+    public void onFriendLogin(String friendId) {
         //把自己从自己所有好友的map集合里面查找出来
 //        每个用户都有自己的全部好友的map集合其中包括自己的id和信息
         FriendItemVo friend = friends.get(friendId);
@@ -88,7 +77,9 @@ public class FriendManager {
             //若该用户存在把他的所有的好友提取出来存到list里面
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
 
-
+            for (FriendItemVo itemVo: friendItems) {
+                System.out.println(itemVo);
+            }
             receiveFriendsList(friendItems);
         }
     }
@@ -112,11 +103,10 @@ public class FriendManager {
     public void receiveFriendsList(List<FriendItemVo> friendItems) {
         friends.clear();
         for (FriendItemVo item : friendItems) {
-            friends.put(item.getUserId(), item);
+            friends.put(item.getUserName(), item);
         }
         rangeToGroupFriends(friendItems);
 
-//        UiBaseService.INSTANCE.runTaskInFxThread(() -> {
         refreshMyFriendsView(friendItems);
 
     }
@@ -148,13 +138,9 @@ public class FriendManager {
         TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
         for (FriendItemVo item : friendItems) {
             int groupId = item.getGroup();
-            List<FriendItemVo> frendsByGroup = groupFriends.get(groupId);
-            if (frendsByGroup == null) {
-                //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
-                frendsByGroup = new ArrayList<>();
-                groupFriends.put(groupId, frendsByGroup);
-            }
-			/*
+            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
+            //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
+            /*
 			*
 		     查询出该用户有几种好友分组
 			* */
@@ -167,7 +153,8 @@ public class FriendManager {
 
 
     private void decorateFriendGroup(Accordion container, String groupName, List<FriendItemVo> friendItems) {
-        ListView<Node> listView = new ListView<Node>();
+        System.out.println(">>>>>>"+groupName);
+        ListView<Node> listView = new ListView<>();
         int onlineCount = 0;
         UiController stageController = UiController.getInstance();
         for (FriendItemVo item : friendItems) {
@@ -187,8 +174,6 @@ public class FriendManager {
 
 
     private void decorateFriendItem(Pane itemUi, FriendItemVo friendVo) {
-        Label autographLabel = (Label) itemUi.lookup("#signature");
-        autographLabel.setText(friendVo.getRemark());
         Hyperlink usernameUi = (Hyperlink) itemUi.lookup("#userName");
         usernameUi.setText(friendVo.getUserName());
 

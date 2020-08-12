@@ -5,20 +5,11 @@ import java.util.Date;
 
 public class User implements Serializable {
     private static final long serialVersionUID=43210L;
-    private String uid;
     private String username;
-    private String password;
-    private Date createMillisTime;
+    private String pwd;
+    private String nickname;
+    private Date cmt;
     private String ip;
-
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
 
     public String getUsername() {
         return username;
@@ -29,19 +20,27 @@ public class User implements Serializable {
     }
 
     public String getPassword() {
-        return password;
+        return pwd;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.pwd = password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public Date getCreateMillisTime() {
-        return createMillisTime;
+        return cmt;
     }
 
     public void setCreateMillisTime(Date createMillisTime) {
-        this.createMillisTime = createMillisTime;
+        this.cmt = createMillisTime;
     }
 
     public String getIp() {
@@ -55,10 +54,10 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "uid='" + uid + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", createMillisTime=" + createMillisTime +
+                "username='" + username + '\'' +
+                ", password='" + pwd + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", createMillisTime=" + cmt +
                 ", ip='" + ip + '\'' +
                 '}';
     }

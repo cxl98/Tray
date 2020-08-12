@@ -17,7 +17,7 @@ public class Peizhi {
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
             //构造一个BufferedReader类来读取文件
-            String s = null;
+            String s;
             while ((s = br.readLine()) != null) {
                 String ss[] = s.split(" ");
                 if (ss[1] != null) {
