@@ -15,7 +15,7 @@ public class Server implements API {
     public Object login(User user) {
         User userByUid = userServer.findUserByUsername(user.getUsername());
         if (null!=userByUid&&userByUid.getUsername().equals(user.getUsername())){
-            return StatusCode.SUCCESS.getCode();
+            return userByUid;
         }
 
         return StatusCode.ACCOUNT_NOT_MATCH.getCode();
