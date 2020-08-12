@@ -78,6 +78,7 @@
 				<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
 			</padding>
 		</Label>
+<<<<<<< HEAD
 		<Label fx:id="signature" layoutX="95.0" layoutY="66.0" prefHeight="18.0" prefWidth="193.0" text="" textFill="WHITE">
 			<font>
 				<Font size="17.0" />
@@ -89,6 +90,8 @@
       <ButtonBar prefHeight="40.0" prefWidth="200.0" />
       <TextField layoutX="15.0" layoutY="150.0" prefHeight="28.0" prefWidth="234.0" />
       <Hyperlink layoutX="237.0" layoutY="151.0" />
+=======
+>>>>>>> cxl/master
 
 	</children>
 </Pane>

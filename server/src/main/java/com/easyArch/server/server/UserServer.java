@@ -17,7 +17,7 @@ public class UserServer {
 
     public boolean register(User user) {
         User userByName = findUserByUsername(user.getUsername());
-        if (null!=userByName && null!= userByName.getUid()  && userByName.getUsername().equals(user.getUsername())) {
+        if (null!=userByName && userByName.getUsername().equals(user.getUsername())) {
             return true;
         }
         user.setPassword(DigestUtils.md5Hex(user.getPassword()));

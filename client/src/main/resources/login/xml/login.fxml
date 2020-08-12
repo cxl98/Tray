@@ -26,10 +26,8 @@
 				<Font size="18.0" />
 			</font>
 		</Button>
-		<TextField fx:id="username" layoutX="135.0" layoutY="195.0" prefHeight="25.0" prefWidth="194.0" promptText="%login.account" text="1000" />
+		<TextField fx:id="username" layoutX="135.0" layoutY="195.0" prefHeight="25.0" prefWidth="194.0" promptText="%login.account"  />
 		<PasswordField fx:id="password" layoutX="135.0" layoutY="226.0" prefHeight="25.0" prefWidth="194.0" promptText="%login.password" />
-		<CheckBox fx:id="rememberPsw" layoutX="135.0" layoutY="258.0" mnemonicParsing="false" text="%login.rememberPsw" />
-		<CheckBox fx:id="autoLogin" layoutX="260.0" layoutY="258.0" mnemonicParsing="false" text="%login.autoLogin" />
 		<Label />
 		<Label />
 		<ImageView fx:id="closeBtn" fitHeight="30.0" fitWidth="30.0" layoutX="399.0" onMouseClicked="#close" onMouseEntered="#closeEntered" onMouseExited="#closeExited" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

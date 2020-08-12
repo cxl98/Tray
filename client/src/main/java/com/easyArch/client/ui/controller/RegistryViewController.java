@@ -24,36 +24,47 @@ import java.util.UUID;
 
 public class RegistryViewController implements Initializable, ControllerStage {
     @FXML
+    public TextField nickname;
+    @FXML
     private Button register;
     @FXML
-    private TextField userName;
+    private TextField username;
     @FXML
     private PasswordField password;
     @FXML
     private Label errorTips;
     @FXML
-    private ToggleGroup sexGroup;
-    @FXML
     private ImageView minBtn;
     @FXML
     private ImageView closeBtn;
+    private User user;
 
     @FXML
     public void register() {
-        String userNameText = userName.getText();
-        String text = password.getText();
+        String userName= username.getText();
+        String pwd = password.getText();
+        String nickName = nickname.getText();
+        register(userName,pwd,nickName);
 
-        User user=new User();
-        user.setUid(UUID.randomUUID().toString());
-        user.setUsername(userNameText);
-        user.setPassword(text);
+        if (null!=user&&!"".equals(user)){
+            HandlerFactory handlerFactory=HandlerFactory.getFactory();
+            Handler registry = handlerFactory.handler("registry");
+            Object handler = registry.handler(user);
+            if (null!=handler&&!handler.equals("")){
+                gotoLogin();
+            }
+        }
+    }
+
+    private void register(String userName, String pwd, String nickName) {
+        user=new User();
+        user.setUsername(userName);
+        user.setPassword(pwd);
+        user.setNickname(nickName);
         user.setCreateMillisTime(new Date());
         user.setIp(IpUtil.getIp());
-        HandlerFactory handlerFactory=HandlerFactory.getFactory();
-        Handler registry = handlerFactory.handler("registry");
-        Object handler = registry.handler(user);
-        System.out.println(handler);
     }
+
     @FXML
     public void register_entered() {
         register.setStyle("-fx-background-radius:4;-fx-background-color: #097299");
@@ -70,9 +81,10 @@ public class RegistryViewController implements Initializable, ControllerStage {
     }
 
     private void clearFields() {
-        userName.setText("");
+        username.setText("");
         password.setText("");
         errorTips.setText("");
+        nickname.setText("");
         errorTips.setVisible(false);
     }
 
@@ -117,10 +129,11 @@ public class RegistryViewController implements Initializable, ControllerStage {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         register.disableProperty().bind(Bindings.createBooleanBinding(
-                ()->0==userName.getText().length()||
-                    0==password.getText().length(),
-                userName.textProperty(),
-                password.textProperty()
+                ()->0==username.getText().length()||
+                    0==password.getText().length()||0==nickname.getText().length(),
+                username.textProperty(),
+                password.textProperty(),
+                nickname.textProperty()
         ));
 
     }

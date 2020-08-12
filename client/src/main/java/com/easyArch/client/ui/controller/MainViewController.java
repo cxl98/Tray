@@ -38,8 +38,6 @@ public class MainViewController implements Initializable, ControllerStage {
     private ScrollPane friendSp;
     @FXML
     private Label username;
-    @FXML
-    private Label signature;
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
@@ -89,15 +87,6 @@ public class MainViewController implements Initializable, ControllerStage {
         getStage().setIconified(true);
     }
 
-//    @FXML
-//    private void username_entered() {
-//        username.setStyle("-fx-background-radius:4;-fx-background-color: #136f9b");
-//    }
-//
-//    @FXML
-//    private void username_exited() {
-//        username.setStyle("");
-//    }
 
 
 

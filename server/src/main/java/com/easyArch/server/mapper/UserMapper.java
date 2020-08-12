@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Select;
 public interface UserMapper {
     @Select("SELECT * FROM tray_user WHERE username=#{username,jdbcType=VARCHAR}")
     User findUserByUsername(String username);
-    @Insert("insert into tray_user(uid,username,password,createMillisTime,ip) values (#{uid},#{username},#{password},#{createMillisTime},#{ip})")
+    @Insert("insert into tray_user(username,pwd,nickname,cmt,ip) values (#{username},#{pwd},#{nickname},#{cmt},#{ip})")
     int insertUser(User user);
 }

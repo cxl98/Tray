@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ImageUtil {
-    private static final String PATH="1111.png";
+    private static final String PATH="head.png";
     public static File image(File file){
         try {
            return image(file,PATH,400,400);
@@ -80,9 +80,9 @@ public class ImageUtil {
 
     public static void main(String[] args) {
         ImageUtil imageUtil = new ImageUtil();
-        File file = new File("/home/cxl/cxl/test-demo/test/src/main/resources/331077379.png");
+        File file = new File("/home/cxl/桌面/周计划/cxl/托盘/Tray/client/src/main/resources/main/img/icon.jpg");
         try {
-            imageUtil.image(file,"1111.png",400,400);
+            imageUtil.image(file,"head.png",400,400);
         } catch (IOException e) {
             e.printStackTrace();
         }

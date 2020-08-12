@@ -1,4 +1,4 @@
-package com.easyArch.client.util;
+package com.easeArch.common.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

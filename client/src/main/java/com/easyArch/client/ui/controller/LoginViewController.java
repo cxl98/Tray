@@ -40,10 +40,6 @@ public class LoginViewController implements Initializable, ControllerStage {
     @FXML
     private PasswordField password;
     @FXML
-    private CheckBox rememberPsw;
-    @FXML
-    private CheckBox autoLogin;
-    @FXML
     private ImageView closeBtn;
     @FXML
     private ImageView minBtn;
@@ -98,15 +94,14 @@ public class LoginViewController implements Initializable, ControllerStage {
         user.setPassword(pwd);
         HandlerFactory factory = HandlerFactory.getFactory();
         Handler login = factory.handler("login");
-        Object handler = login.handler(user);
-        return handler;
+        return login.handler(user);
     }
 
     private void gotoMain(User user) {
         UiController uiController = UiController.getInstance();
         uiController.loadStage(IdContainer.MainView, LayoutUi.MainView, StageStyle.UNDECORATED);
         uiController.switchStage(IdContainer.MainView, IdContainer.LoginView);
-        FriendManager.getInstance().onFriendLogin(Long.parseLong(user.getUsername()));
+        FriendManager.getInstance().onFriendLogin(user.getUsername());
     }
 
     @FXML
