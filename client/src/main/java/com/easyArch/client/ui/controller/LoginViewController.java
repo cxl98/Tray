@@ -72,14 +72,14 @@ public class LoginViewController implements Initializable, ControllerStage {
         final String text = password.getText();
         if (!"".equals(name) || !"".equals(text)) {
             Object object = isObject(name, text);
-            if (StatusCode.SUCCESS.getCode().equals(object)) {
+            if (null!=object&&!"".equals(object)) {
                 getStage().close();
-                UserManager.getInstance().addUser(user);
+                UserManager.getInstance().addUser((User) object);
                 new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
                 gotoMain(user);
             } else {
                 errorPane.setVisible(true);
-                errorTips.setText(StatusCode.macth((String) object));
+                errorTips.setText(StatusCode.macth("6"));
             }
         }
 
