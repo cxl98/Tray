@@ -23,35 +23,8 @@ public class FriendManager {
     private static TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
 
     static {
-        //好友分组
-
-        List<FriendItemVo> list1 = new ArrayList<>();
-        FriendItemVo friendItemVo = new FriendItemVo();
-        //好友属性
-        friendItemVo.setUserId("1000");
-        friendItemVo.setRemark("xxx");
-        friendItemVo.setOnline(Constants.ONLINE_STATUS);
-        friendItemVo.setUserName("czt");
-        friendItemVo.setGroup(1);
-        friendItemVo.setGroupName("我的好友");
-        //============================
-
-
-        FriendItemVo friendItemVo1 = new FriendItemVo();
-        friendItemVo1.setUserId("1001");
-        friendItemVo1.setRemark("yyy");
-        friendItemVo1.setOnline(Constants.ONLINE_STATUS);
-        friendItemVo1.setUserName("cwj");
-        friendItemVo1.setGroup(1);
-        friendItemVo1.setGroupName("我的好友");
-
-
-        list1.add(friendItemVo);
-        list1.add(friendItemVo1);
-        friends.put("1000",friendItemVo);
-        friends.put("1001",friendItemVo1);
+        groupNames.put(0,"我的好友");
     }
-
     /**
      * 分组好友视图
      */
@@ -76,10 +49,6 @@ public class FriendManager {
             friend.setOnline(Constants.ONLINE_STATUS);
             //若该用户存在把他的所有的好友提取出来存到list里面
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
-
-            for (FriendItemVo itemVo: friendItems) {
-                System.out.println(itemVo);
-            }
             receiveFriendsList(friendItems);
         }
     }
@@ -90,7 +59,7 @@ public class FriendManager {
      *
      * @param friendId
      */
-    public void onFriendLogout(long friendId) {
+    public void onFriendLogout(String friendId) {
         FriendItemVo friend = friends.get(friendId);
         if (friend != null) {
             friend.setOnline(Constants.OFFLINE_STATUS);
@@ -112,19 +81,13 @@ public class FriendManager {
     }
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
-        UiController stageController = UiController.getInstance();
-        Stage stage = stageController.getStageByName(IdContainer.MainView);
 
-        ScrollPane scrollPane = (ScrollPane) stage.getScene().getRoot().lookup("#friendSp");
-        Accordion friendGroup = (Accordion) scrollPane.getContent();
-        friendGroup.getPanes().clear();
-
+        Accordion compent = getCompent();
 
         for (Map.Entry<Integer, List<FriendItemVo>> entry : groupFriends.entrySet()) {
             int groupId = entry.getKey();
-            String groupName = this.groupNames.get(groupId);
-            decorateFriendGroup(friendGroup, groupName, entry.getValue());
-//        }
+            String groupName = groupNames.get(groupId);
+            decorateFriendGroup(compent, groupName, entry.getValue());
         }
 
 
@@ -188,6 +151,13 @@ public class FriendManager {
         }
 
     }
+    private Accordion getCompent(){
+        UiController stageController = UiController.getInstance();
+        Stage stage = stageController.getStageByName(IdContainer.MainView);
 
-
+        ScrollPane scrollPane = (ScrollPane) stage.getScene().getRoot().lookup("#friendSp");
+        Accordion friendGroup = (Accordion) scrollPane.getContent();
+        friendGroup.getPanes().clear();
+        return friendGroup;
+    }
 }

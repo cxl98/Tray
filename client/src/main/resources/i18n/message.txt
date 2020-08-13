@@ -29,3 +29,5 @@ main.tab.recent=最近
 chat.loadmore=加载更多
 chat.send=发送
 chat.close=关闭
+
+main.friend=我的好友

@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,6 +34,7 @@
 									<content>
 										<Accordion fx:id="friends" prefHeight="475.0" prefWidth="298.0" />
 									</content>
+
 								</ScrollPane>
 							</children>
 						</AnchorPane>

@@ -2,6 +2,8 @@ package com.easeArch.common.service;
 
 import com.easeArch.common.entry.User;
 
+import java.util.List;
+
 public interface  API {
     /**
      * 登录业务
@@ -16,5 +18,12 @@ public interface  API {
      * @return
      */
     Object registry(User user);
+
+    /**
+     * 好友
+     * @param account 账号
+     * @return 好友列表
+     */
+    List<User> friend(String account);
 
 }

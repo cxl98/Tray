@@ -9,8 +9,6 @@ public class RegistryHandler implements Handler {
     @Override
     public Object handler(Object object) {
         TrayClient client=new TrayClient();
-        client.setAddress("127.0.0.1:8888");
-        client.connect();
         API handler = client.handler();
         return handler.registry((User) object);
     }
