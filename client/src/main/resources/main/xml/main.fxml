@@ -3,20 +3,20 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #169ADA;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.MainViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+	  prefWidth="300.0" style="-fx-background-color: #169ADA;" xmlns="http://javafx.com/javafx/8.0.121"
+	  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.MainViewController">
 	<children>
 		<ImageView fx:id="shineImage" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="40.0" onMouseClicked="#clicked">
 			<image>
@@ -66,6 +66,13 @@
 				<Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
 			</padding>
 		</Label>
+      <Button    fx:id="add" layoutX="189.0" layoutY="112.0" mnemonicParsing="false"       onMouseClicked="#add" onMouseEntered="#add_en" onMouseExited="#add_ex"
+			  prefHeight="28.0" prefWidth="105.0" text="%main.head.add" />
 
 	</children>
 </Pane>
+<!--<Button  layoutX="135.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#login" onMouseEntered="#login_en" onMouseExited="#login_ex" prefHeight="32.0" prefWidth="194.0" style="-fx-background-color: #9AD3EE" text="%login.safeLogin" textFill="#1b1b1b">-->
+<!--<font>-->
+	<!--<Font size="18.0" />-->
+<!--</font>-->
+<!--</Button>-->

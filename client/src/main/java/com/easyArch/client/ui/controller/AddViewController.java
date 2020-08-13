@@ -1,6 +1,7 @@
 package com.easyArch.client.ui.controller;
 
 import com.easeArch.common.entry.User;
+import com.easyArch.client.manager.SearchManager;
 import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
 import com.easyArch.client.ui.UiController;
@@ -8,7 +9,6 @@ import com.easyArch.client.ui.container.IdContainer;
 import com.easyArch.client.ui.container.ResourceContainer;
 import com.easyArch.client.util.ImageUtil;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
@@ -17,19 +17,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MainViewController implements Initializable, ControllerStage {
-
-
-
-
+public class AddViewController  implements Initializable, ControllerStage {
     @FXML
     private ImageView close;
     @FXML
@@ -60,7 +56,7 @@ public class MainViewController implements Initializable, ControllerStage {
         SimpleStringProperty simpleStringProperty = new SimpleStringProperty();
         simpleStringProperty.set(username);
         this.username.textProperty().bind(simpleStringProperty);
-        Image image=ResourceContainer.getHead();
+        Image image= ResourceContainer.getHead();
         shineImage.setImage(image);
     }
     @FXML
@@ -96,6 +92,12 @@ public class MainViewController implements Initializable, ControllerStage {
     }
 
 
+    @FXML
+    private void queryEvent() {
+
+        SearchManager.getInstance().refreshRecommendFriends(new ArrayList<>());
+
+    }
 
 
     public void clicked() {
@@ -137,7 +139,6 @@ public class MainViewController implements Initializable, ControllerStage {
     public void add_ex() {
         add.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
     }
-
 
 
 

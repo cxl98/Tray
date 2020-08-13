@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #e4e4e4;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.AddViewController">
+   <children>
+      <AnchorPane prefHeight="154.0" prefWidth="300.0" style="-fx-background-color: #169ada;">
+         <children>
+            <ImageView fx:id="min" fitHeight="30.0" fitWidth="30.0" layoutX="241.0" layoutY="-1.0" onMouseClicked="#min" onMouseEntered="#minEntered" onMouseExited="#minExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../login/img/min.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="close" fitHeight="30.0" fitWidth="30.0" layoutX="271.0" layoutY="2.0" onMouseClicked="#close" onMouseEntered="#closeEntered" onMouseExited="#closeExited" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../login/img/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="shineImage" fitHeight="91.0" fitWidth="90.0" layoutX="20.0" layoutY="22.0" onMouseClicked="#clicked">
+               <image>
+                  <Image url="@../../login/img/logo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="username" contentDisplay="CENTER" layoutX="158.0" layoutY="45.0" text="username" textFill="BLACK">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="-1.0" left="5.0" right="5.0" top="-1.0" />
+               </padding>
+            </Label>
+
+         </children>
+      </AnchorPane>
+      <HBox layoutY="124.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: lightblue;">
+         <children>
+            <TextField prefHeight="28.0" prefWidth="260.0" styleClass="-fx-prompt-text-fill:#000000;" text="%add.head.search" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#queryEvent" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/seach/search_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</Pane>
