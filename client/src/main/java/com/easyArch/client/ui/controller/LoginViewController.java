@@ -77,7 +77,8 @@ public class LoginViewController implements Initializable, ControllerStage {
                 UserManager.getInstance().addUser((User) object);
                 new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
                 gotoMain(user);
-            } else {
+            }
+            else {
                 errorPane.setVisible(true);
                 errorTips.setText(StatusCode.macth("6"));
             }
@@ -108,7 +109,7 @@ public class LoginViewController implements Initializable, ControllerStage {
 
     @FXML
     public void login_ex() {
-        login.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
+        login.setStyle("-fx-background-radius:4;-fx-background-color: #e4e4e4");
     }
 
 

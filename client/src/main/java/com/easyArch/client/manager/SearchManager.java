@@ -1,15 +1,14 @@
 package com.easyArch.client.manager;
 
-
-
 import java.util.List;
 
 
-
+import com.easeArch.common.entry.User;
+import com.easyArch.client.ui.UiController;
+import com.easyArch.client.ui.container.IdContainer;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -24,54 +23,70 @@ public class SearchManager {
         return instance;
     }
 
-    public void refreshRecommendFriends(List<RecommendFriendItem> items) {
+    public void refreshRecommendFriends(List<User> items) {
 //        StageController stageController = UiBaseService.INSTANCE.getStageController();
 ////		stageController.switchStage(R.id.SearchView, R.id.MainView);
 //        Stage stage = stageController.setStage(R.id.SearchView);
-//        GridPane scrollPane = lookUpFriendsContainer();
+
+        UiController stageController = UiController.getInstance();
+        Stage stage = stageController.getStageByName(IdContainer.RecommendFriendItem);
+
+
+
+        GridPane scrollPane = lookUpFriendsContainer();
 //        scrollPane.getChildren().clear();
-//
-//        if (items == null || items.size() <= 0) {
-//            // 暂时填充假数据
-//            for (int i = 0; i < 3; i++) {
-//                for (int j = 0; j < 2; j++) {
-//                    Pane item = stageController.load(R.layout.RecommendFriendItem, Pane.class);
-//                    decorateItem(item, null);
-//                    scrollPane.add(item, i, j);
-//                }
-//            }
-//        } else {
-//            for (int i = 0; i < items.size(); i++) {
-//                int colIndex = items.size() / 3;
-//                int rowIndex = items.size() % 3;
-//                Pane itemUi = stageController.load(R.layout.RecommendFriendItem, Pane.class);
-//                decorateItem(itemUi, items.get(i));
-//                scrollPane.add(itemUi, colIndex, rowIndex);
-//            }
-//        }
+
+        if (items == null || items.size() <= 0) {
+            // 暂时填充假数据
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 2; j++) {
+                    Pane item = stageController.load(IdContainer.RecommendFriendItem, Pane.class);
+                    decorateItem(item, null);
+                    scrollPane.add(item, i, j);
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < items.size(); i++) {
+                int colIndex = items.size() / 1;
+                int rowIndex = items.size() % 1;
+                Pane itemUi = stageController.load(IdContainer.RecommendFriendItem, Pane.class);
+                decorateItem(itemUi, items.get(i));
+                scrollPane.add(itemUi, colIndex, rowIndex);
+            }
+        }
 
     }
-//
-//    private GridPane lookUpFriendsContainer() {
+
+    private Accordion lookUpFriendsContainer() {
 //        StageController stageController = UiBaseService.INSTANCE.getStageController();
 //        // 使用SplitPane有坑，由于SplitPane没有children子标签，所以这样需要间接lookup
 //        Stage stage = stageController.getStageBy(R.id.SearchView);
-//        SplitPane splitPane = (SplitPane)stage.getScene().getRoot().lookup("#friendsSplitPane");
-//        ObservableList<Node> itmes = splitPane.getItems();
-//        AnchorPane anchorPane = (AnchorPane)itmes.get(1);
-//
-//        GridPane scrollPane = (GridPane)anchorPane.lookup("#friendsContainer");
-//        return scrollPane;
-//    }
-//
-//    private void decorateItem(Pane itemUi, RecommendFriendItem item) {
+
+        UiController stageController = UiController.getInstance();
+        Stage stage = stageController.getStageByName(IdContainer.RecommendFriendItem);
+       ScrollPane   scrollPane = (ScrollPane)stage.getScene().getRoot().lookup("#friendSp");
+//        ObservableList<Node> itmes = scrollPane.getItems();
+        Accordion content = (Accordion) scrollPane.getContent();
+        content.getPanes().clear();
+
+        return   content;
+    }
+
+    private void decorateItem(Pane itemUi, User item) {
+
+        Hyperlink usernameUi = (Hyperlink) itemUi.lookup("#userName");
+        usernameUi.setText(item.getUsername());
+
+
+
 //        Label nickNameUi = (Label)itemUi.lookup("#nickName");
 //        nickNameUi.setText(item == null ? "起个名字好难" : item.getNickName());
 //        Label reasonUi = (Label)itemUi.lookup("#reason");
 //        reasonUi.setText("10个共同好友");
 //
 //        ImageView headImage = (ImageView)itemUi.lookup("#headIcon");
-//
-//    }
+
+    }
 
 }

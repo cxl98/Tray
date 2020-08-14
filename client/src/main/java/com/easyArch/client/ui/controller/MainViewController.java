@@ -3,6 +3,7 @@ package com.easyArch.client.ui.controller;
 import com.easeArch.common.entry.User;
 import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
+import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
 import com.easyArch.client.ui.container.ResourceContainer;
@@ -20,16 +21,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable, ControllerStage {
-
-
-
-
     @FXML
     private ImageView close;
     @FXML
@@ -63,6 +61,8 @@ public class MainViewController implements Initializable, ControllerStage {
         Image image=ResourceContainer.getHead();
         shineImage.setImage(image);
     }
+
+
     @FXML
     private void close(){
         System.exit(0);
@@ -112,9 +112,6 @@ public class MainViewController implements Initializable, ControllerStage {
             String string = file.getAbsoluteFile().toURI().toString();
 
             Image image1=new Image(string);
-
-
-
             shineImage.setImage(image1);
         }
     }
@@ -123,6 +120,8 @@ public class MainViewController implements Initializable, ControllerStage {
 
     @FXML
     public void add(){
+    getStage().close();
+    gotoAdd();
 
     }
 
@@ -135,11 +134,16 @@ public class MainViewController implements Initializable, ControllerStage {
 
     @FXML
     public void add_ex() {
-        add.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
+        add.setStyle("-fx-background-radius:4;-fx-background-color: #e4e4e4");
     }
 
 
-
+    @FXML
+    public void gotoAdd() {
+        UiController uiController = UiController.getInstance();
+        uiController.loadStage(IdContainer.AddView, LayoutUi.AddView, StageStyle.UNDECORATED);
+        uiController.switchStage(IdContainer.AddView, IdContainer.MainView);
+    }
 
 
 }

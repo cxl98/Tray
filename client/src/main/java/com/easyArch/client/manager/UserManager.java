@@ -5,6 +5,7 @@ import com.easeArch.common.entry.User;
 public class UserManager {
     private static final UserManager instance =new UserManager();
     private User user;
+
     public static UserManager getInstance() {
         return instance;
     }

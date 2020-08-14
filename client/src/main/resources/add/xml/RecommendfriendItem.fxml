@@ -19,8 +19,8 @@
 				<Font size="20.0" />
 			</font>
 		</Label>
-		<Label fx:id="friendId" layoutX="206.0" layoutY="23.0" visible="false" />
-		<Label fx:id="netStatus" layoutX="206.0" layoutY="16.0" text="在线状态" visible="false" />
+		<!--<Label fx:id="friendId" layoutX="206.0" layoutY="23.0" visible="false" />-->
+		<!--<Label fx:id="netStatus" layoutX="206.0" layoutY="16.0" text="在线状态" visible="false" />-->
 		<Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="50.0" layoutX="180.0" layoutY="26.0" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 20; -fx-background-color: #f00;" text="99" textAlignment="CENTER" textFill="WHITE" visible="false">
 			<font>
 				<Font name="System Bold" size="13.0" />

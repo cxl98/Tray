@@ -45,7 +45,7 @@ public class AddViewController  implements Initializable, ControllerStage {
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
-        return uiController.getStageByName(IdContainer.MainView);
+        return uiController.getStageByName(IdContainer.AddView);
     }
 
     @Override
@@ -92,6 +92,7 @@ public class AddViewController  implements Initializable, ControllerStage {
     }
 
 
+
     @FXML
     private void queryEvent() {
 
@@ -112,35 +113,9 @@ public class AddViewController  implements Initializable, ControllerStage {
             File image = ImageUtil.image(file);
             System.out.println(image);
             String string = file.getAbsoluteFile().toURI().toString();
-
             Image image1=new Image(string);
-
-
-
             shineImage.setImage(image1);
         }
     }
-
-
-
-    @FXML
-    public void add(){
-
-    }
-
-
-
-    @FXML
-    public void add_en() {
-        add.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
-    }
-
-    @FXML
-    public void add_ex() {
-        add.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
-    }
-
-
-
 
 }

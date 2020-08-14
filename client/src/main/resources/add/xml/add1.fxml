@@ -2,7 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +13,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #e4e4e4;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.AddViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #e4e4e4;"
+      xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easyArch.client.ui.controller.AddViewController">
    <children>
       <AnchorPane prefHeight="154.0" prefWidth="300.0" style="-fx-background-color: #169ada;">
          <children>
@@ -54,5 +58,31 @@
             </ImageView>
          </children>
       </HBox>
+       <!--<TabPane layoutY="153.0" prefHeight="519.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">-->
+           <!--<tabs>-->
+               <!--<Tab text="%main.tab.friend">-->
+                   <!--<content>-->
+                       <!--<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="469.0" prefWidth="300.0" style="-fx-background-color: #E4E4E4;">-->
+                           <!--<children>-->
+                               <!--<ScrollPane fx:id="friendSp" fitToHeight="true" fitToWidth="true" prefHeight="490.0" prefWidth="300.0">-->
+                                   <!--<content>-->
+                                       <!--<Accordion fx:id="friends" prefHeight="475.0" prefWidth="298.0" />-->
+                                   <!--</content>-->
+                               <!--</ScrollPane>-->
+                           <!--</children>-->
+                       <!--</AnchorPane>-->
+                   <!--</content>-->
+               <!--</Tab>-->
+               <!---->
+           <!--</tabs>-->
+       <!--</TabPane>-->
+
+
+
+       <ScrollPane fx:id="friendSp" fitToHeight="true" fitToWidth="true" layoutY="153.0" prefHeight="546.0" prefWidth="300.0">
+           <content>
+               <Accordion fx:id="friends" prefHeight="475.0" prefWidth="298.0" />
+           </content>
+       </ScrollPane>
    </children>
 </Pane>
