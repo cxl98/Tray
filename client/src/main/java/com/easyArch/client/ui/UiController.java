@@ -1,5 +1,6 @@
 package com.easyArch.client.ui;
 
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -99,5 +100,8 @@ public class UiController {
     public void closeStage(String name) {
         Stage target = getStageByName(name);
         target.close();
+    }
+    public void runTask(Runnable task){
+        Platform.runLater(task);
     }
 }

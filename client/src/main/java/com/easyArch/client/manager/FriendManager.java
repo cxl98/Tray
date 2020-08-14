@@ -97,8 +97,8 @@ public class FriendManager {
      * 调整成好友分组结构
      */
     private void rangeToGroupFriends(List<FriendItemVo> friendItems) {
-//        this.groupFriends.clear();
-        TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
+        groupFriends.clear();
+        TreeMap<Integer, List<FriendItemVo>> tempGroupFriends = new TreeMap<>();
         for (FriendItemVo item : friendItems) {
             int groupId = item.getGroup();
             List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
@@ -107,16 +107,15 @@ public class FriendManager {
 			*
 		     查询出该用户有几种好友分组
 			* */
-            this.groupNames.put(groupId, item.getGroupName());
+            groupNames.put(groupId, item.getGroupName());
 //			把相同groupid的好友放在同一个group里面
             frendsByGroup.add(item);
         }
-        this.groupFriends = groupFriends;
+        groupFriends = tempGroupFriends;
     }
 
 
     private void decorateFriendGroup(Accordion container, String groupName, List<FriendItemVo> friendItems) {
-        System.out.println(">>>>>>"+groupName);
         ListView<Node> listView = new ListView<>();
         int onlineCount = 0;
         UiController stageController = UiController.getInstance();

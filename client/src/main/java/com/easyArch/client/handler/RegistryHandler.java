@@ -6,9 +6,10 @@ import com.easeArch.common.service.API;
 import com.easyArch.client.netty.TrayClient;
 
 public class RegistryHandler implements Handler {
-    @Override
+
+
     public Object handler(Object object) {
-        TrayClient client=new TrayClient();
+        TrayClient client = new TrayClient();
         API handler = client.handler();
         return handler.registry((User) object);
     }
