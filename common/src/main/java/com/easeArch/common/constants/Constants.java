@@ -8,7 +8,8 @@ public class Constants {
     /** 在线状态 */
     public static final byte ONLINE_STATUS = 1;
     /**
-     *
+     * address
      */
+    public static final String ADDRESS="127.0.0.1:8888";
 
 }

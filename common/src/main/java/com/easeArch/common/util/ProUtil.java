@@ -10,13 +10,13 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ProUtil implements Runnable{
+public class ProUtil implements Runnable {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProUtil.class);
-    private static final String CONFIG = "setting/config.properties";
+    private static final String CONFIG = "/home/cxl/桌面/周计划/cxl/托盘/Tray/common/src/main/resources/keyboard.properties";
     private Map<String, Long> configFileModifyData = new HashMap<>();
-    private static Map<String, String> SYSTEM_CONFIG = new ConcurrentHashMap<>();
+    private Map<String, String> SYSTEM_CONFIG = new ConcurrentHashMap<>();
 
-    public static Map<String, String> getSystemConfig() {
+    public Map<String, String> getSystemConfig() {
         return SYSTEM_CONFIG;
     }
 
@@ -64,7 +64,7 @@ public class ProUtil implements Runnable{
     }
 
     public static void main(String[] args) {
-        ProUtil proUtil=new ProUtil();
+        ProUtil proUtil = new ProUtil();
         proUtil.loadAllConfigFiles();
     }
 }

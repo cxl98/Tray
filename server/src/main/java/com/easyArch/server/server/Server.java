@@ -6,6 +6,8 @@ import com.easeArch.common.service.API;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class Server implements API {
 
@@ -28,5 +30,10 @@ public class Server implements API {
         }
 
         return StatusCode.FAIL.getCode();
+    }
+
+    @Override
+    public List<User> friend(String account) {
+        return null;
     }
 }
