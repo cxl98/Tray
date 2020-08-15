@@ -1,8 +1,10 @@
 package com.easyArch.server.server;
 
+import com.easeArch.common.entry.FriendItemVo;
 import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
 import com.easeArch.common.service.API;
+import com.easyArch.server.util.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,9 @@ public class Server implements API {
 
     @Autowired
     private UserServer userServer;
+    @Autowired
+    private Id id;
+
 
     public Object login(User user) {
         User userByUid = userServer.findUserByUsername(user.getUsername());
@@ -33,7 +38,8 @@ public class Server implements API {
     }
 
     @Override
-    public List<User> friend(String account) {
+    public List<FriendItemVo> friend(String account) {
+
         return null;
     }
 }

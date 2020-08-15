@@ -76,18 +76,20 @@ public class FriendManager {
         }
         rangeToGroupFriends(friendItems);
 
-        refreshMyFriendsView(friendItems);
+        UiController.getInstance().runTask(()-> refreshMyFriendsView(friendItems)
+        );
+
 
     }
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
 
-        Accordion compent = getCompent();
+        Accordion competent = getCompent();
 
         for (Map.Entry<Integer, List<FriendItemVo>> entry : groupFriends.entrySet()) {
             int groupId = entry.getKey();
             String groupName = groupNames.get(groupId);
-            decorateFriendGroup(compent, groupName, entry.getValue());
+            decorateFriendGroup(competent, groupName, entry.getValue());
         }
 
 

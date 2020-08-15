@@ -1,5 +1,6 @@
 package com.easeArch.common.service;
 
+import com.easeArch.common.entry.FriendItemVo;
 import com.easeArch.common.entry.User;
 
 import java.util.List;
@@ -24,6 +25,9 @@ public interface  API {
      * @param account 账号
      * @return 好友列表
      */
-    List<User> friend(String account);
+    List<FriendItemVo> friend(String account);
+
+
+
 
 }

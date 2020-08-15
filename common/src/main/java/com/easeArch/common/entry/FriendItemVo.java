@@ -4,21 +4,48 @@ package com.easeArch.common.entry;
 import com.easeArch.common.constants.Constants;
 
 public class FriendItemVo {
-    private String  userId;
-    /** 备注 */
-    private String remark;
+    private int fid;
+    private String  username;
 //    /** 在线状态 {@link Constants#ONLINE_STATUS} */
     private Byte  online;
     /** 昵称 */
-    private String userName;
+    private String nickname;
     /** 所属好友分组 */
     private int group;
     /** 分组备注 */
     private String groupName;
 
 
+    public int getFid() {
+        return fid;
+    }
+
+    public void setFid(int fid) {
+        this.fid = fid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Byte getOnline() {
+        return online;
+    }
+
     public void setOnline(Byte online) {
         this.online = online;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public int getGroup() {
@@ -37,49 +64,13 @@ public class FriendItemVo {
         this.groupName = groupName;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public Byte getOnline() {
-        return online;
-    }
-
-    public void setOnline(byte online) {
-        this.online = online;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public boolean isOnline() {
-        return this.online == Constants.ONLINE_STATUS;
-    }
-
     @Override
     public String toString() {
         return "FriendItemVo{" +
-                "userId=" + userId +
-                ", remark='" + remark + '\'' +
+                "fid=" + fid +
+                ", username='" + username + '\'' +
                 ", online=" + online +
-                ", userName='" + userName + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", group=" + group +
                 ", groupName='" + groupName + '\'' +
                 '}';
