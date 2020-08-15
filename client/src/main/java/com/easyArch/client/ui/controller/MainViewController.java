@@ -54,7 +54,7 @@ public class MainViewController implements Initializable, ControllerStage {
     public void initialize(URL location, ResourceBundle resources) {
         UserManager instance = UserManager.getInstance();
         User user = instance.getUser();
-        String username = user.getNickname();
+        String username = user.getUsername();
         SimpleStringProperty simpleStringProperty = new SimpleStringProperty();
         simpleStringProperty.set(username);
         this.username.textProperty().bind(simpleStringProperty);
@@ -122,7 +122,6 @@ public class MainViewController implements Initializable, ControllerStage {
     public void add(){
     getStage().close();
     gotoAdd();
-
     }
 
 

@@ -5,11 +5,12 @@ import com.easeArch.common.constants.Constants;
 
 public class FriendItemVo {
     private int fid;
-    private String  username;
+    private String  account;
 //    /** 在线状态 {@link Constants#ONLINE_STATUS} */
-    private Byte  online;
     /** 昵称 */
-    private String nickname;
+    private String username;
+
+    private Byte  status;
     /** 所属好友分组 */
     private int group;
     /** 分组备注 */
@@ -24,6 +25,18 @@ public class FriendItemVo {
         this.fid = fid;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -32,20 +45,8 @@ public class FriendItemVo {
         this.username = username;
     }
 
-    public Byte getOnline() {
-        return online;
-    }
-
-    public void setOnline(Byte online) {
-        this.online = online;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setStatus(Byte status) {
+        this.status = status;
     }
 
     public int getGroup() {
@@ -64,13 +65,16 @@ public class FriendItemVo {
         this.groupName = groupName;
     }
 
+    public boolean isOnline() {
+        return this.status == Constants.ONLINE_STATUS;
+    }
     @Override
     public String toString() {
         return "FriendItemVo{" +
                 "fid=" + fid +
-                ", username='" + username + '\'' +
-                ", online=" + online +
-                ", nickname='" + nickname + '\'' +
+                ", account='" + account + '\'' +
+                ", username=" + username +
+                ", status='" + status + '\'' +
                 ", group=" + group +
                 ", groupName='" + groupName + '\'' +
                 '}';

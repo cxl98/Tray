@@ -20,8 +20,8 @@ public class Server implements API {
 
 
     public Object login(User user) {
-        User userByUid = userServer.findUserByUsername(user.getUsername());
-        if (null!=userByUid&&userByUid.getUsername().equals(user.getUsername())){
+        User userByUid = userServer.findUserByUsername(user.getAccount());
+        if (null!=userByUid&&userByUid.getAccount().equals(user.getAccount())){
             return userByUid;
         }
 
@@ -39,7 +39,11 @@ public class Server implements API {
 
     @Override
     public List<FriendItemVo> friend(String account) {
-
-        return null;
+        List<FriendItemVo> friendItemVos = userServer.friendByCount(account);
+        System.out.println(friendItemVos);
+        if (null==friendItemVos){
+            return null;
+        }
+        return friendItemVos;
     }
 }

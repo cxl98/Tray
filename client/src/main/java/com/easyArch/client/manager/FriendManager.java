@@ -22,7 +22,9 @@ public class FriendManager {
     private static Map<Integer, String> groupNames = new HashMap<>();
     private static TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
 
-
+    static {
+        groupNames.put(0,"我的好友");
+    }
     /**
      * 分组好友视图
      */
@@ -39,16 +41,13 @@ public class FriendManager {
      */
 
 
-
-
-
     public void onFriendLogin(String friendId) {
 
         //把自己从自己所有好友的map集合里面查找出来
 //        每个用户都有自己的全部好友的map集合其中包括自己的id和信息
         FriendItemVo friend = friends.get(friendId);
         if (friend != null) {
-            friend.setOnline(Constants.ONLINE_STATUS);
+            friend.setStatus(Constants.ONLINE_STATUS);
             //若该用户存在把他的所有的好友提取出来存到list里面
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
             receiveFriendsList(friendItems);
@@ -64,7 +63,7 @@ public class FriendManager {
     public void onFriendLogout(String friendId) {
         FriendItemVo friend = friends.get(friendId);
         if (friend != null) {
-            friend.setOnline(Constants.OFFLINE_STATUS);
+            friend.setStatus(Constants.OFFLINE_STATUS);
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
             receiveFriendsList(friendItems);
         }
@@ -72,14 +71,13 @@ public class FriendManager {
 
 
     public void receiveFriendsList(List<FriendItemVo> friendItems) {
-//        friends.clear();
+        friends.clear();
         for (FriendItemVo item : friendItems) {
-            friends.put(item.getUserName(), item);
+            friends.put(item.getAccount(), item);
         }
-
         rangeToGroupFriends(friendItems);
 
-        UiController.getInstance().runTask(()-> refreshMyFriendsView(friendItems)
+        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
         );
 
 
@@ -87,12 +85,12 @@ public class FriendManager {
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
 
-        Accordion competent = getCompent();
+        Accordion competent = getCompetent();
 
-        for (Map.Entry<Integer, List<FriendItemVo>> entry : groupFriends.entrySet()) {
-            int groupId = entry.getKey();
+        for (FriendItemVo itemVo : friendItems) {
+            int groupId = itemVo.getFid();
             String groupName = groupNames.get(groupId);
-            decorateFriendGroup(competent, groupName, entry.getValue());
+            decorateFriendGroup(competent, groupName, friendItems);
         }
 
 
@@ -107,27 +105,18 @@ public class FriendManager {
         for (FriendItemVo item : friendItems) {
             int groupId = item.getGroup();
 
-            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId,k-> new ArrayList<>());
+            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
             if (frendsByGroup == null) {
                 //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
                 frendsByGroup = new ArrayList<>();
                 groupFriends.put(groupId, frendsByGroup);
-                	/*
-
-            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
-            //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
-            /*
-
-			*
-		     查询出该用户有几种好友分组
-			* */
 
 //			把相同groupid的好友放在同一个group里面
-            frendsByGroup.add(item);
+                frendsByGroup.add(item);
+            }
+            groupFriends = tempGroupFriends;
         }
-        groupFriends = tempGroupFriends;
     }
-
 
     private void decorateFriendGroup(Accordion container, String groupName, List<FriendItemVo> friendItems) {
         ListView<Node> listView = new ListView<>();
@@ -151,11 +140,11 @@ public class FriendManager {
 
     private void decorateFriendItem(Pane itemUi, FriendItemVo friendVo) {
         Hyperlink usernameUi = (Hyperlink) itemUi.lookup("#userName");
-        usernameUi.setText(friendVo.getUserName());
+        usernameUi.setText(friendVo.getUsername());
 
         //隐藏域，聊天界面用
         Label userIdUi = (Label) itemUi.lookup("#friendId");
-        userIdUi.setText(String.valueOf(friendVo.getUserId()));
+        userIdUi.setText(friendVo.getUsername());
 
         ImageView headImage = (ImageView) itemUi.lookup("#headIcon");
 
@@ -164,7 +153,8 @@ public class FriendManager {
         }
 
     }
-    private Accordion getCompent(){
+
+    private Accordion getCompetent() {
         UiController stageController = UiController.getInstance();
         Stage stage = stageController.getStageByName(IdContainer.MainView);
 
@@ -174,3 +164,4 @@ public class FriendManager {
         return friendGroup;
     }
 }
+

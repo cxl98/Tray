@@ -1,6 +1,7 @@
 package com.easyArch.client.ui.controller;
 
 
+import com.easeArch.common.entry.FriendItemVo;
 import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
 import com.easeArch.common.handler.Handler;
@@ -26,6 +27,7 @@ import javafx.stage.StageStyle;
 import javax.management.openmbean.ArrayType;
 import javax.swing.*;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -72,8 +74,13 @@ public class LoginViewController implements Initializable, ControllerStage {
         final String text = password.getText();
         if (!"".equals(name) || !"".equals(text)) {
             Object object = isObject(name, text);
+            List<FriendItemVo> friend = isFriend(name);
+            if (null!=friend){
+                FriendManager.getInstance().receiveFriendsList(friend);
+            }
             if (null!=object&&!"".equals(object)) {
                 getStage().close();
+                System.out.println(object);
                 UserManager.getInstance().addUser((User) object);
                 new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
                 gotoMain(user);
@@ -86,10 +93,17 @@ public class LoginViewController implements Initializable, ControllerStage {
 
     }
 
+    private List<FriendItemVo> isFriend(String name) {
+        HandlerFactory factory = HandlerFactory.getFactory();
+        Handler send = factory.handler("send");
+        return (List<FriendItemVo>) send.handler(name);
+
+    }
+
     private Object isObject(String name, String pwd) {
         user = new User();
-        user.setUsername(name);
-        user.setPassword(pwd);
+        user.setAccount(name);
+        user.setPwd(pwd);
         HandlerFactory factory = HandlerFactory.getFactory();
         Handler login = factory.handler("login");
         return login.handler(user);
@@ -99,7 +113,7 @@ public class LoginViewController implements Initializable, ControllerStage {
         UiController uiController = UiController.getInstance();
         uiController.loadStage(IdContainer.MainView, LayoutUi.MainView, StageStyle.UNDECORATED);
         uiController.switchStage(IdContainer.MainView, IdContainer.LoginView);
-        FriendManager.getInstance().onFriendLogin(user.getUsername());
+        FriendManager.getInstance().onFriendLogin(user.getAccount());
     }
 
     @FXML

@@ -5,11 +5,31 @@ import java.util.Date;
 
 public class User implements Serializable {
     private static final long serialVersionUID=43210L;
-    private String username;
+    private String account;
     private String pwd;
-    private String nickname;
+    private String username;
     private Date cmt;
     private String ip;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
 
     public String getUsername() {
         return username;
@@ -19,20 +39,12 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public String getPassword() {
-        return pwd;
+    public Date getCmt() {
+        return cmt;
     }
 
-    public void setPassword(String password) {
-        this.pwd = password;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setCmt(Date cmt) {
+        this.cmt = cmt;
     }
 
     public Date getCreateMillisTime() {
@@ -54,9 +66,9 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "account='" + account + '\'' +
                 ", password='" + pwd + '\'' +
-                ", nickname='" + nickname + '\'' +
+                ",username ='" + username + '\'' +
                 ", createMillisTime=" + cmt +
                 ", ip='" + ip + '\'' +
                 '}';

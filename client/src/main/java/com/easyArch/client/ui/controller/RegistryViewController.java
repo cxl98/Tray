@@ -58,9 +58,9 @@ public class RegistryViewController implements Initializable, ControllerStage {
 
     private void register(String userName, String pwd, String nickName) {
         user=new User();
-        user.setUsername(userName);
-        user.setPassword(pwd);
-        user.setNickname(nickName);
+        user.setAccount(userName);
+        user.setPwd(pwd);
+        user.setUsername(nickName);
         user.setCreateMillisTime(new Date());
         user.setIp(IpUtil.getIp());
     }
