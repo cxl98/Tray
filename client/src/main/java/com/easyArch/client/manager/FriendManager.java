@@ -27,10 +27,9 @@ public class FriendManager {
 
 
         List<FriendItemVo> list1=new ArrayList<>();
+
+
          FriendItemVo friendItemVo = new FriendItemVo();
-
-
-
         //好友属性
         friendItemVo.setUserId("1000");
         friendItemVo.setRemark("xxx");
