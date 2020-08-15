@@ -22,9 +22,14 @@ register.girl=女
 register.operateSucc=注册成功！
 
 main.head.seach=搜索：联系人、多人聊天、群
+main.head.add=添加好友
 main.tab.friend=好友
 main.tab.group=群
 main.tab.recent=最近
+
+add.head.search=搜索
+
+
 
 chat.loadmore=加载更多
 chat.send=发送

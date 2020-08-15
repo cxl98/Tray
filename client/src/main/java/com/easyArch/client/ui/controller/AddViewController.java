@@ -1,15 +1,14 @@
 package com.easyArch.client.ui.controller;
 
 import com.easeArch.common.entry.User;
+import com.easyArch.client.manager.SearchManager;
 import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
-import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
 import com.easyArch.client.ui.container.ResourceContainer;
 import com.easyArch.client.util.ImageUtil;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
@@ -18,16 +17,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MainViewController implements Initializable, ControllerStage {
+public class AddViewController  implements Initializable, ControllerStage {
     @FXML
     private ImageView close;
     @FXML
@@ -47,7 +45,7 @@ public class MainViewController implements Initializable, ControllerStage {
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
-        return uiController.getStageByName(IdContainer.MainView);
+        return uiController.getStageByName(IdContainer.AddView);
     }
 
     @Override
@@ -58,11 +56,9 @@ public class MainViewController implements Initializable, ControllerStage {
         SimpleStringProperty simpleStringProperty = new SimpleStringProperty();
         simpleStringProperty.set(username);
         this.username.textProperty().bind(simpleStringProperty);
-        Image image=ResourceContainer.getHead();
+        Image image= ResourceContainer.getHead();
         shineImage.setImage(image);
     }
-
-
     @FXML
     private void close(){
         System.exit(0);
@@ -97,6 +93,13 @@ public class MainViewController implements Initializable, ControllerStage {
 
 
 
+    @FXML
+    private void queryEvent() {
+
+        SearchManager.getInstance().refreshRecommendFriends(new ArrayList<>());
+
+    }
+
 
     public void clicked() {
         FileChooser fileChooser=new FileChooser();
@@ -110,40 +113,9 @@ public class MainViewController implements Initializable, ControllerStage {
             File image = ImageUtil.image(file);
             System.out.println(image);
             String string = file.getAbsoluteFile().toURI().toString();
-
             Image image1=new Image(string);
             shineImage.setImage(image1);
         }
     }
-
-
-
-    @FXML
-    public void add(){
-    getStage().close();
-    gotoAdd();
-
-    }
-
-
-
-    @FXML
-    public void add_en() {
-        add.setStyle("-fx-background-radius:4;-fx-background-color: #17fdff");
-    }
-
-    @FXML
-    public void add_ex() {
-        add.setStyle("-fx-background-radius:4;-fx-background-color: #e4e4e4");
-    }
-
-
-    @FXML
-    public void gotoAdd() {
-        UiController uiController = UiController.getInstance();
-        uiController.loadStage(IdContainer.AddView, LayoutUi.AddView, StageStyle.UNDECORATED);
-        uiController.switchStage(IdContainer.AddView, IdContainer.MainView);
-    }
-
 
 }

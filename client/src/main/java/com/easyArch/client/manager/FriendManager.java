@@ -22,9 +22,7 @@ public class FriendManager {
     private static Map<Integer, String> groupNames = new HashMap<>();
     private static TreeMap<Integer, List<FriendItemVo>> groupFriends = new TreeMap<>();
 
-    static {
-        groupNames.put(0,"我的好友");
-    }
+
     /**
      * 分组好友视图
      */
@@ -41,7 +39,11 @@ public class FriendManager {
      */
 
 
+
+
+
     public void onFriendLogin(String friendId) {
+
         //把自己从自己所有好友的map集合里面查找出来
 //        每个用户都有自己的全部好友的map集合其中包括自己的id和信息
         FriendItemVo friend = friends.get(friendId);
@@ -70,10 +72,11 @@ public class FriendManager {
 
 
     public void receiveFriendsList(List<FriendItemVo> friendItems) {
-        friends.clear();
+//        friends.clear();
         for (FriendItemVo item : friendItems) {
             friends.put(item.getUserName(), item);
         }
+
         rangeToGroupFriends(friendItems);
 
         UiController.getInstance().runTask(()-> refreshMyFriendsView(friendItems)
@@ -103,13 +106,22 @@ public class FriendManager {
         TreeMap<Integer, List<FriendItemVo>> tempGroupFriends = new TreeMap<>();
         for (FriendItemVo item : friendItems) {
             int groupId = item.getGroup();
+
+            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId,k-> new ArrayList<>());
+            if (frendsByGroup == null) {
+                //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
+                frendsByGroup = new ArrayList<>();
+                groupFriends.put(groupId, frendsByGroup);
+                	/*
+
             List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
             //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
             /*
+
 			*
 		     查询出该用户有几种好友分组
 			* */
-            groupNames.put(groupId, item.getGroupName());
+
 //			把相同groupid的好友放在同一个group里面
             frendsByGroup.add(item);
         }

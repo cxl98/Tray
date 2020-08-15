@@ -14,4 +14,13 @@ public class LayoutUi {
      */
     public static final String MainView = "main/xml/main.fxml";
     public static final String  FriendItem="main/xml/friendItem.fxml";
+
+    public  static  final  String  AddView="add/xml/add1.fxml";
+
+    public static  final String    RecommendFriendItem="add/xml/RecommendfriendItem.fxml";
+
+
+
+
+
 }
