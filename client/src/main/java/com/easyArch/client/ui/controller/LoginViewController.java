@@ -76,6 +76,7 @@ public class LoginViewController implements Initializable, ControllerStage {
             Object object = isObject(name, text);
             List<FriendItemVo> friend = isFriend(name);
             if (null!=friend){
+                System.out.println("login"+friend);
                 FriendManager.getInstance().receiveFriendsList(friend);
             }
             if (null!=object&&!"".equals(object)) {

@@ -42,7 +42,6 @@ public class FriendManager {
 
 
     public void onFriendLogin(String friendId) {
-
         //把自己从自己所有好友的map集合里面查找出来
 //        每个用户都有自己的全部好友的map集合其中包括自己的id和信息
         FriendItemVo friend = friends.get(friendId);
@@ -50,7 +49,8 @@ public class FriendManager {
             friend.setStatus(Constants.ONLINE_STATUS);
             //若该用户存在把他的所有的好友提取出来存到list里面
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
-            receiveFriendsList(friendItems);
+            UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
+            );
         }
     }
 
@@ -65,7 +65,8 @@ public class FriendManager {
         if (friend != null) {
             friend.setStatus(Constants.OFFLINE_STATUS);
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
-            receiveFriendsList(friendItems);
+            UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
+            );
         }
     }
 
@@ -75,22 +76,18 @@ public class FriendManager {
         for (FriendItemVo item : friendItems) {
             friends.put(item.getAccount(), item);
         }
-        rangeToGroupFriends(friendItems);
-
-        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
-        );
-
-
+//        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
+//        );
     }
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
-
+        System.out.println("xxxx??????");
         Accordion competent = getCompetent();
-
+        System.out.println("xxxxxxxxxx???>>>>>>>"+competent);
         for (FriendItemVo itemVo : friendItems) {
             int groupId = itemVo.getFid();
             String groupName = groupNames.get(groupId);
-            decorateFriendGroup(competent, groupName, friendItems);
+                decorateFriendGroup(competent, groupName, friendItems);
         }
 
 
@@ -99,24 +96,16 @@ public class FriendManager {
     /**
      * 调整成好友分组结构
      */
-    private void rangeToGroupFriends(List<FriendItemVo> friendItems) {
-        groupFriends.clear();
-        TreeMap<Integer, List<FriendItemVo>> tempGroupFriends = new TreeMap<>();
-        for (FriendItemVo item : friendItems) {
-            int groupId = item.getGroup();
-
-            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
-            if (frendsByGroup == null) {
-                //若不存在该好友分组 也就是groupId 则在groupFriends里面添加该好友分组
-                frendsByGroup = new ArrayList<>();
-                groupFriends.put(groupId, frendsByGroup);
-
-//			把相同groupid的好友放在同一个group里面
-                frendsByGroup.add(item);
-            }
-            groupFriends = tempGroupFriends;
-        }
-    }
+//    private void rangeToGroupFriends(List<FriendItemVo> friendItems) {
+//        groupFriends.clear();
+//        TreeMap<Integer, List<FriendItemVo>> tempGroupFriends = new TreeMap<>();
+//        for (FriendItemVo item : friendItems) {
+//            int groupId = item.getGroup();
+//
+//            List<FriendItemVo> frendsByGroup = groupFriends.computeIfAbsent(groupId, k -> new ArrayList<>());
+//            groupFriends = tempGroupFriends;
+//        }
+//    }
 
     private void decorateFriendGroup(Accordion container, String groupName, List<FriendItemVo> friendItems) {
         ListView<Node> listView = new ListView<>();
