@@ -84,12 +84,12 @@ public class FriendManager {
         System.out.println("xxxx??????");
         Accordion competent = getCompetent();
         System.out.println("xxxxxxxxxx???>>>>>>>"+competent);
+        String groupName =null;
         for (FriendItemVo itemVo : friendItems) {
             int groupId = itemVo.getFid();
-            String groupName = groupNames.get(groupId);
-                decorateFriendGroup(competent, groupName, friendItems);
+           groupName = groupNames.get(groupId);
         }
-
+        decorateFriendGroup(competent, groupName, friendItems);
 
     }
 
