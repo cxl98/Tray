@@ -28,7 +28,6 @@ public class UserServer {
         return userMapper.insertUser(user) != 0;
     }
     public List<FriendItemVo> friendByCount(String account){
-        System.out.println("account"+account);
         if (null!=account){
             return userMapper.friendByCount(account);
         }

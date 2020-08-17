@@ -3,7 +3,10 @@ package com.easeArch.common.netty;
 import com.easeArch.common.service.API;
 
 public interface INettyClient {
-
+    /**
+     * 初始化连接
+     */
+    void init();
     /**
      *处理
      */

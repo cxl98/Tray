@@ -7,13 +7,22 @@ import com.easeArch.common.service.API;
 
 public class AbstractTrayClient implements INettyClient {
 
-    private RpcReferenceBean rpcReferenceBean = new RpcReferenceBean();
+    private static final RpcReferenceBean rpcReferenceBean = new RpcReferenceBean();
 
+
+    @Override
+    public void init() {
+        rpcReferenceBean.init();
+    }
 
     @Override
     public API handler() {
         rpcReferenceBean.setAddress(Constants.ADDRESS);
         rpcReferenceBean.setIface(API.class);
         return (API) rpcReferenceBean.getObject();
+    }
+
+    public RpcReferenceBean getRpcReferenceBean() {
+        return rpcReferenceBean;
     }
 }
