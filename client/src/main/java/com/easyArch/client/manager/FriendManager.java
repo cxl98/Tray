@@ -81,8 +81,8 @@ public class FriendManager {
         for (FriendItemVo item : friendItems) {
             friends.put(item.getAccount(), item);
         }
-//        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
-//        );
+        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
+        );
     }
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
