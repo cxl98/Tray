@@ -7,16 +7,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 @Component
 public class Id {
-    private static AtomicInteger generator=new AtomicInteger(100);
+    private static AtomicInteger generator=new AtomicInteger();
     private ReentrantLock reentrantLock=new ReentrantLock();
 
 
     public int getNextId(){
-        try {
-            reentrantLock.lock();
             return generator.incrementAndGet();
-        } finally {
-            reentrantLock.unlock();
-        }
     }
 }

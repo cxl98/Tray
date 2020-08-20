@@ -12,12 +12,8 @@ public class TrayApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-//    private void connect(){
-//        new Thread(()->new TrayClient().init()).start();
-//    }
     @Override
     public void start(Stage stage) {
-//        connect();
         UiController uiController = UiController.getInstance();
         uiController.setPrimaryStage("root", stage);
         Stage login = uiController.loadStage(IdContainer.LoginView, LayoutUi.LoginView, StageStyle.UNDECORATED);
@@ -27,4 +23,5 @@ public class TrayApplication extends Application {
         uiController.setStage(IdContainer.LoginView);
 //        uiController.setStage(IdContainer.MainView);
     }
+
 }
