@@ -1,7 +1,9 @@
 package com.easyArch.client.manager;
 
+import com.cxl.rpc.util.Push;
 import com.easeArch.common.constants.Constants;
 import com.easeArch.common.entry.FriendItemVo;
+import com.easeArch.common.entry.User;
 import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -15,7 +17,7 @@ import javafx.stage.Stage;
 import java.util.*;
 
 
-public class FriendManager {
+public class FriendManager implements Push {
 
     private static FriendManager instance = new FriendManager();
     private static Map<String, FriendItemVo> friends = new HashMap<>();
@@ -48,14 +50,8 @@ public class FriendManager {
         if (friend != null) {
             friend.setStatus(Constants.ONLINE_STATUS);
             //若该用户存在把他的所有的好友提取出来存到list里面
-            System.out.println("friend    "+friend);
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
-            for (FriendItemVo itemVo:
-                 friendItems) {
-                System.out.println("xxxxx"+itemVo);
-            }
-            UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
-            );
+            UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems));
         }
     }
 
@@ -63,7 +59,7 @@ public class FriendManager {
     /**
      * 好友下线刷新
      *
-     * @param friendId
+     * @param friendId 好友id
      */
     public void onFriendLogout(String friendId) {
         FriendItemVo friend = friends.get(friendId);
@@ -111,7 +107,6 @@ public class FriendManager {
 //    }
 
     private void decorateFriendGroup(Accordion container, String groupName, List<FriendItemVo> friendItems) {
-        System.out.println("lililili"+friendItems);
         ListView<Node> listView = new ListView<>();
         int onlineCount = 0;
         UiController stageController = UiController.getInstance();
@@ -155,6 +150,12 @@ public class FriendManager {
         Accordion friendGroup = (Accordion) scrollPane.getContent();
         friendGroup.getPanes().clear();
         return friendGroup;
+    }
+
+    @Override
+    public void exec(Object o) {
+        User user = (User) o;
+        System.out.println(user.toString());
     }
 }
 

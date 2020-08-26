@@ -1,7 +1,6 @@
 package com.easyArch.client.ui.controller;
 
 
-import com.cxl.rpc.remoting.net.params.RpcResponse;
 import com.easeArch.common.entry.FriendItemVo;
 import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
@@ -9,7 +8,6 @@ import com.easeArch.common.handler.Handler;
 import com.easyArch.client.handler.HandlerFactory;
 import com.easyArch.client.manager.FriendManager;
 import com.easyArch.client.manager.UserManager;
-import com.easyArch.client.netty.TrayClient;
 import com.easyArch.client.ui.ControllerStage;
 import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.Tray;
@@ -26,7 +24,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import javax.management.openmbean.ArrayType;
 import javax.swing.*;
 import java.net.URL;
 import java.util.List;

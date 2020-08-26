@@ -1,6 +1,5 @@
 package com.easyArch.client;
 
-import com.easyArch.client.netty.TrayClient;
 import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;

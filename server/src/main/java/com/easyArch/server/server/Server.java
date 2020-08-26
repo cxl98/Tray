@@ -4,8 +4,10 @@ import com.cxl.rpc.remoting.net.params.RpcResponse;
 import com.cxl.rpc.remoting.provider.annotation.RpcService;
 import com.cxl.rpc.util.ChannelUtil;
 import com.easeArch.common.entry.FriendItemVo;
+import com.easeArch.common.entry.Packet;
 import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
+import com.easeArch.common.res.TrayResponse;
 import com.easeArch.common.service.API;
 import com.easyArch.server.util.Id;
 import io.netty.channel.Channel;
@@ -46,12 +48,11 @@ public class Server implements API {
     private void onFriend(User user) {
         for (User item: users) {
             Channel channel = online.get(item.getAccount());
-            RpcResponse rpcResponse=new RpcResponse();
+            RpcResponse rpcResponse=new TrayResponse();
             rpcResponse.setRequestId(user.getAccount());
             rpcResponse.setResult(user);
             try {
                 channel.writeAndFlush(rpcResponse).sync();
-                System.out.println("xxxxxxxxxxx");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
