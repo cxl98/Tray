@@ -9,7 +9,7 @@ public class RegistryHandler implements Handler {
 
 
     public Object handler(Object object) {
-        TrayClient client = new TrayClient();
+        TrayClient client = TrayClient.getClient();
         API handler = client.handler();
         return handler.registry((User) object);
     }

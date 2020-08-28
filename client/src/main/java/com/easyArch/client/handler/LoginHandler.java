@@ -10,7 +10,7 @@ public class LoginHandler implements Handler {
 
     @Override
     public Object handler(Object object) {
-        TrayClient client=new TrayClient();
+        TrayClient client = TrayClient.getClient();
         API handler = client.handler();
         return handler.login((User) object);
     }

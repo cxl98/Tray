@@ -1,5 +1,6 @@
 package com.easyArch.client;
 
+import com.easyArch.client.netty.TrayClient;
 import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -11,7 +12,6 @@ public class TrayApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-
     @Override
     public void start(Stage stage) {
         UiController uiController = UiController.getInstance();
@@ -23,4 +23,5 @@ public class TrayApplication extends Application {
         uiController.setStage(IdContainer.LoginView);
 //        uiController.setStage(IdContainer.MainView);
     }
+
 }

@@ -9,7 +9,7 @@ public class SendHandler implements Handler {
 
     @Override
     public Object handler(Object object) {
-        TrayClient client = new TrayClient();
+        TrayClient client = TrayClient.getClient();
         API handler = client.handler();
         return handler.friend((String) object);
     }

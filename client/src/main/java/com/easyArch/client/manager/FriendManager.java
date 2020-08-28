@@ -48,7 +48,12 @@ public class FriendManager {
         if (friend != null) {
             friend.setStatus(Constants.ONLINE_STATUS);
             //若该用户存在把他的所有的好友提取出来存到list里面
+            System.out.println("friend    "+friend);
             List<FriendItemVo> friendItems = new ArrayList<>(friends.values());
+            for (FriendItemVo itemVo:
+                 friendItems) {
+                System.out.println("xxxxx"+itemVo);
+            }
             UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
             );
         }
@@ -76,18 +81,26 @@ public class FriendManager {
         for (FriendItemVo item : friendItems) {
             friends.put(item.getAccount(), item);
         }
-//        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
-//        );
+        UiController.getInstance().runTask(() -> refreshMyFriendsView(friendItems)
+        );
     }
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
-        System.out.println("xxxx??????");
         Accordion competent = getCompetent();
         System.out.println("xxxxxxxxxx???>>>>>>>"+competent);
+
         String groupName =null;
         for (FriendItemVo itemVo : friendItems) {
             int groupId = itemVo.getFid();
            groupName = groupNames.get(groupId);
+        }
+        decorateFriendGroup(competent, groupName, friendItems);
+
+
+//        String groupName = null;
+        for (FriendItemVo itemVo : friendItems) {
+            int groupId = itemVo.getFid();
+             groupName= groupNames.get(groupId);
         }
         decorateFriendGroup(competent, groupName, friendItems);
 
@@ -108,6 +121,7 @@ public class FriendManager {
 //    }
 
     private void decorateFriendGroup(Accordion container, String groupName, List<FriendItemVo> friendItems) {
+        System.out.println("lililili"+friendItems);
         ListView<Node> listView = new ListView<>();
         int onlineCount = 0;
         UiController stageController = UiController.getInstance();
