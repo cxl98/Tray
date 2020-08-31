@@ -25,8 +25,14 @@ public class Server implements API {
     private UserServer userServer;
     @Autowired
     private Id id;
+
+
+
     private static Map<String,Channel> online=new ConcurrentHashMap<>();
     private static List<User> users=new ArrayList<>();
+
+
+
 
     public Object login(User user) {
         User userByUid = userServer.findUserByUsername(user.getAccount());
