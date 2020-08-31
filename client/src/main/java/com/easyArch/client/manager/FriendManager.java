@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import java.util.*;
 
 
-public class FriendManager implements Push {
+public class FriendManager {
 
     private static FriendManager instance = new FriendManager();
     private static Map<String, FriendItemVo> friends = new HashMap<>();
@@ -150,12 +150,6 @@ public class FriendManager implements Push {
         Accordion friendGroup = (Accordion) scrollPane.getContent();
         friendGroup.getPanes().clear();
         return friendGroup;
-    }
-
-    @Override
-    public void exec(Object o) {
-        User user = (User) o;
-        System.out.println(user.toString());
     }
 }
 

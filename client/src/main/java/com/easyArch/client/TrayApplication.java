@@ -1,5 +1,7 @@
 package com.easyArch.client;
 
+import com.cxl.rpc.util.ProxyPush;
+import com.easyArch.client.manager.Friend;
 import com.easyArch.client.ui.LayoutUi;
 import com.easyArch.client.ui.UiController;
 import com.easyArch.client.ui.container.IdContainer;
@@ -23,4 +25,8 @@ public class TrayApplication extends Application {
 //        uiController.setStage(IdContainer.MainView);
     }
 
+    @Override
+    public void init() {
+        ProxyPush.getInstance().setClassName(new Friend());
+    }
 }
