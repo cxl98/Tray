@@ -1,8 +1,10 @@
 package com.easeArch.common.res;
 
+import com.cxl.rpc.remoting.net.params.RpcResponse;
+
 import java.io.Serializable;
 
-public class TrayResponse implements Serializable {
+public class TrayResponse extends RpcResponse implements Serializable {
     private static final long serialVersionUID=54321L;
     private String id;
     private String error;

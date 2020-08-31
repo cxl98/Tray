@@ -26,7 +26,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import javax.management.openmbean.ArrayType;
 import javax.swing.*;
 import java.net.URL;
 import java.util.List;
