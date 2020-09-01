@@ -31,6 +31,6 @@ public class UserServer {
         if (null!=account){
             return userMapper.friendByCount(account);
         }
-        return null;
+        throw new TrayException("account is not");
     }
 }

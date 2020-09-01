@@ -70,10 +70,6 @@ public class Server implements API {
 
     @Override
     public List<FriendItemVo> friend(String account) {
-        List<FriendItemVo> friendItemVos = userServer.friendByCount(account);
-        if (null==friendItemVos){
-            return null;
-        }
-        return friendItemVos;
+        return userServer.friendByCount(account);
     }
 }
