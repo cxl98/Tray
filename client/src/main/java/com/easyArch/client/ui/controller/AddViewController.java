@@ -1,6 +1,9 @@
 package com.easyArch.client.ui.controller;
 
+import com.easeArch.common.entry.FriendItemVo;
 import com.easeArch.common.entry.User;
+import com.easeArch.common.handler.Handler;
+import com.easyArch.client.handler.HandlerFactory;
 import com.easyArch.client.manager.SearchManager;
 import com.easyArch.client.manager.UserManager;
 import com.easyArch.client.ui.ControllerStage;
@@ -11,10 +14,7 @@ import com.easyArch.client.util.ImageUtil;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AddViewController  implements Initializable, ControllerStage {
@@ -42,6 +43,8 @@ public class AddViewController  implements Initializable, ControllerStage {
     @FXML
     private Button add;
 
+    @FXML
+    private TextField  serchuser;
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
@@ -95,8 +98,19 @@ public class AddViewController  implements Initializable, ControllerStage {
 
     @FXML
     private void queryEvent() {
+        String  account  = serchuser.getText();
+        User user = searchFriend(account);
+        SearchManager.getInstance().refreshRecommendFriends(user);
 
-        SearchManager.getInstance().refreshRecommendFriends(new ArrayList<>());
+    }
+
+
+
+
+    private User searchFriend(String account) {
+        HandlerFactory factory = HandlerFactory.getFactory();
+        Handler search = factory.handler("search");
+        return     (User)search.handler(account);
 
     }
 

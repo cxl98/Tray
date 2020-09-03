@@ -21,23 +21,22 @@ public class SearchManager {
         return instance;
     }
 
-    public void refreshRecommendFriends(List<User> items) {
+    public void refreshRecommendFriends(User  user) {
         UiController stageController = UiController.getInstance();
         Stage stage = stageController.getStageByName(IdContainer.AddView);
         ScrollPane   scrollPane = (ScrollPane)stage.getScene().getRoot().lookup("#friendSp");
         Accordion content = (Accordion) scrollPane.getContent();
-          lookUpFriendsContainer(content,items);
+          lookUpFriendsContainer(content,user);
     }
 
-    private void lookUpFriendsContainer(Accordion container,List<User> items) {
-
+    private void lookUpFriendsContainer(Accordion container, User user) {
 
         ListView<Node> listView = new ListView<>();
 
         UiController uiController = UiController.getInstance();
 
 
-        if (items == null || items.size() <= 0) {
+        if (user == null ) {
 //            // 暂时填充假数据
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 2; j++) {
@@ -46,30 +45,25 @@ public class SearchManager {
                     listView.getItems().add(pane);
                 }
             }
-            String  groupInfo="推荐好友"+items.size();
+            String  groupInfo="推荐好友"+1;
             TitledPane titledPane = new TitledPane(groupInfo, listView);
             container.getPanes().add(titledPane);
         }
         else {
 
-            for (User user : items) {
+
                 Pane pane = uiController.load(LayoutUi.RecommendFriendItem, Pane.class);
                 decorateItem(pane, user);
                 listView.getItems().add(pane);
-            }
 
-            String  groupInfo="推荐好友"+items.size();
+
+            String  groupInfo="推荐好友"+1;
             TitledPane titledPane = new TitledPane(groupInfo, listView);
             container.getPanes().add(titledPane);
         }
 
 
     }
-
-
-
-
-
 
 
     private void decorateItem(Pane itemUi, User item) {

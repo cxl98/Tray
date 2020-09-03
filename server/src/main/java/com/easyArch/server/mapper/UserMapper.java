@@ -14,6 +14,17 @@ public interface UserMapper {
     int insertUser(User user);
     @Select("SELECT tray_user.account,tray_user.username,tray_friend.status FROM tray_friend,tray_user where tray_friend.faccount=tray_user.account and tray_friend.account=#{account}")
     List<FriendItemVo> friendByCount(String account);
+
+
+    @Select("SELECT tray_user.username FROM  tray_user where tray_user.account=#{account}")
+    User findUserByAccount(String account);
+
+
     @Insert("INSERT into tray_friend(fid,account,faccount,status) values (#{fid},#{account},#{faccount},#{status})")
     int insertFriend(FriendItemVo friendItemVo);
+
+
+
+
+
 }

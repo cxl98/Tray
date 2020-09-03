@@ -91,7 +91,6 @@ public class LoginViewController implements Initializable, ControllerStage {
                 errorTips.setText(StatusCode.macth("6"));
             }
         }
-
     }
 
     private List<FriendItemVo> isFriend(String name) {

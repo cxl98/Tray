@@ -4,13 +4,11 @@ import com.easeArch.common.handler.Handler;
 import com.easeArch.common.service.API;
 import com.easyArch.client.netty.TrayClient;
 
-public class SendHandler implements Handler {
-
+public class   SearchHandler  implements Handler {
     @Override
     public Object handler(Object object) {
         TrayClient client = TrayClient.getClient();
         API handler = client.handler();
-        return handler.friend((String) object);
+        return handler.searchFriend((String) object);
     }
-
 }

@@ -4,7 +4,6 @@ import com.cxl.rpc.remoting.net.params.RpcResponse;
 import com.cxl.rpc.remoting.provider.annotation.RpcService;
 import com.cxl.rpc.util.ChannelUtil;
 import com.easeArch.common.entry.FriendItemVo;
-import com.easeArch.common.entry.Packet;
 import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
 import com.easeArch.common.res.TrayResponse;
@@ -51,6 +50,7 @@ public class Server implements API {
         return StatusCode.ACCOUNT_NOT_MATCH.getCode();
     }
 
+
     private void onFriend(User user) {
         for (User item: users) {
             Channel channel = online.get(item.getAccount());
@@ -82,4 +82,16 @@ public class Server implements API {
         }
         return friendItemVos;
     }
+
+    @Override
+    public User searchFriend(String account) {
+        User user = userServer.findUserByAccount(account);
+        if (null==user){
+            return null;
+        }
+        return user;
+
+    }
+
+
 }

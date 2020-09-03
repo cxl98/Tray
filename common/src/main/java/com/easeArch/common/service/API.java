@@ -28,6 +28,6 @@ public interface  API {
     List<FriendItemVo> friend(String account);
 
 
-
+    User searchFriend(String account);
 
 }

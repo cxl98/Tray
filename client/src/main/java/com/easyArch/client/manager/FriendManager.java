@@ -93,13 +93,6 @@ public class FriendManager {
         decorateFriendGroup(competent, groupName, friendItems);
 
 
-//        String groupName = null;
-        for (FriendItemVo itemVo : friendItems) {
-            int groupId = itemVo.getFid();
-             groupName= groupNames.get(groupId);
-        }
-        decorateFriendGroup(competent, groupName, friendItems);
-
     }
 
     /**
