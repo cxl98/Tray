@@ -44,7 +44,8 @@ public class AddViewController  implements Initializable, ControllerStage {
     private Button add;
 
     @FXML
-    private TextField  serchuser;
+    private TextField  searchuser;
+
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
@@ -98,7 +99,7 @@ public class AddViewController  implements Initializable, ControllerStage {
 
     @FXML
     private void queryEvent() {
-        String  account  = serchuser.getText();
+        String  account  = searchuser.getText();
         User user = searchFriend(account);
         SearchManager.getInstance().refreshRecommendFriends(user);
 

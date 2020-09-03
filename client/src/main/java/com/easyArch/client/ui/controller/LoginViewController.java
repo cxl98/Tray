@@ -106,7 +106,7 @@ public class LoginViewController implements Initializable, ControllerStage {
         user.setPwd(pwd);
         HandlerFactory factory = HandlerFactory.getFactory();
         Handler login = factory.handler("login");
-        return login.handler(user);
+        return    login.handler(user);
     }
 
     private void gotoMain(User user) {
