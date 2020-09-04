@@ -11,4 +11,9 @@ public class   SearchHandler  implements Handler {
         API handler = client.handler();
         return handler.searchFriend((String) object);
     }
+
+    @Override
+    public Object handler(Object object1, Object object2) {
+        return null;
+    }
 }

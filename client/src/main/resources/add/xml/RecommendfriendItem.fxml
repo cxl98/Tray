@@ -7,9 +7,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0"
+	  prefWidth="270.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+	  fx:controller="com.easyArch.client.ui.controller.AddViewController">
 	<children>
-		<ImageView id="headIcon" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="5.0">
+		<ImageView   fx:id="imageView" id="headIcon" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="5.0"   onMouseClicked="#click"   >
 			<image>
 				<Image url="@../../main/img/head.png" />
 			</image>
@@ -26,7 +28,7 @@
 				<Font name="System Bold" size="13.0" />
 			</font>
 		</Label>
-		<Hyperlink fx:id="userName" layoutX="68.0" layoutY="16.0" text="username" textFill="#000011">
+		<Hyperlink fx:id="userName" layoutX="68.0" layoutY="16.0" text="username" textFill="#000011"   onMouseClicked="#click" >
 			<font>
 				<Font size="18.0" />
 			</font>

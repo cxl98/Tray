@@ -13,4 +13,9 @@ public class SendHandler implements Handler {
         return handler.friend((String) object);
     }
 
+    @Override
+    public Object handler(Object object1, Object object2) {
+        return null;
+    }
+
 }

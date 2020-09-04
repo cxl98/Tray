@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReference;
 
 @RpcService
 @Service
@@ -36,6 +37,7 @@ public class Server implements API {
 
 
     public Object login(User user) {
+
         User userByUid = userServer.findUserByUsername(user.getAccount());
         if (null!=userByUid&&userByUid.getAccount().equals(user.getAccount())){
             Channel channel = ChannelUtil.getChannels().getChannel();
@@ -76,12 +78,9 @@ public class Server implements API {
 
     @Override
     public List<FriendItemVo> friend(String account) {
-        List<FriendItemVo> friendItemVos = userServer.friendByCount(account);
-        if (null==friendItemVos){
-            return null;
-        }
-        return friendItemVos;
+        return userServer.friendByCount(account);
     }
+
 
     @Override
     public User searchFriend(String account) {
@@ -92,6 +91,19 @@ public class Server implements API {
         return user;
 
     }
+
+
+   @Override
+    public int insertFriend( String  account ,String faccount){
+
+    return  userServer.insertFriend(account, faccount);
+
+
+    }
+
+
+
+
 
 
 }

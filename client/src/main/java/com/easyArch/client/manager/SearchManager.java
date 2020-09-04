@@ -38,14 +38,13 @@ public class SearchManager {
 
         if (user == null ) {
 //            // 暂时填充假数据
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 2; j++) {
+
                     Pane pane = uiController.load(LayoutUi.RecommendFriendItem, Pane.class);
                     decorateItem(pane, null);
                     listView.getItems().add(pane);
-                }
-            }
-            String  groupInfo="推荐好友"+1;
+
+
+            String  groupInfo="推荐好友"+0;
             TitledPane titledPane = new TitledPane(groupInfo, listView);
             container.getPanes().add(titledPane);
         }

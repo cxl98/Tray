@@ -32,11 +32,19 @@ public class UserServer {
         if (null!=account){
             return userMapper.friendByCount(account);
         }
-        return null;
+        throw new TrayException("account is not");
     }
 
 
     public User findUserByAccount(String account){
         return  userMapper.findUserByAccount(account);
     }
+
+
+    public int  insertFriend(String account,String faccount){
+        return  userMapper.insertFriend(account,faccount);
+    }
+
+
+
 }

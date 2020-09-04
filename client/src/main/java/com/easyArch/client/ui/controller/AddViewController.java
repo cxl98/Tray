@@ -46,6 +46,9 @@ public class AddViewController  implements Initializable, ControllerStage {
     @FXML
     private TextField  searchuser;
 
+//    public static AppModel model=new AppModel();
+
+
     @Override
     public Stage getStage() {
         UiController uiController = UiController.getInstance();
@@ -62,7 +65,21 @@ public class AddViewController  implements Initializable, ControllerStage {
         this.username.textProperty().bind(simpleStringProperty);
         Image image= ResourceContainer.getHead();
         shineImage.setImage(image);
+
     }
+
+
+//
+//    public static void setText(String text)
+//    {
+//        model.setText(text);
+//
+//    }
+//
+
+
+
+
     @FXML
     private void close(){
         System.exit(0);
@@ -132,5 +149,28 @@ public class AddViewController  implements Initializable, ControllerStage {
             shineImage.setImage(image1);
         }
     }
+
+
+
+    @FXML
+    public  void click(){
+//        System.out.println("你已经击中");
+//        String  faccount  = searchuser.getText();
+//        String account= model.getText();
+//        System.out.println("---------------------");
+//        System.out.println(account);
+//        insertFriend(account,faccount);
+
+    }
+
+
+     private  int  insertFriend(String account ,String faccount){
+         HandlerFactory factory = HandlerFactory.getFactory();
+         Handler insert = factory.handler("insert");
+         return (int) insert.handler(account,faccount);
+
+     }
+
+
 
 }

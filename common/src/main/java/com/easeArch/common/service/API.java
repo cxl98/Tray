@@ -30,4 +30,7 @@ public interface  API {
 
     User searchFriend(String account);
 
+
+
+    int  insertFriend(String  account ,String faccount);
 }

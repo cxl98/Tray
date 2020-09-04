@@ -16,13 +16,16 @@ public interface UserMapper {
     List<FriendItemVo> friendByCount(String account);
 
 
-    @Select("SELECT tray_user.username FROM  tray_user where tray_user.account=#{account}")
+    @Select("SELECT   tray_user.username FROM  tray_user where tray_user.account=#{account}")
     User findUserByAccount(String account);
 
 
-    @Insert("INSERT into tray_friend(fid,account,faccount,status) values (#{fid},#{account},#{faccount},#{status})")
-    int insertFriend(FriendItemVo friendItemVo);
+//    @Insert("INSERT into tray_friend(fid,account,faccount,status) values (#{fid},#{account},#{faccount},#{status})")
+//    int insertFriend(FriendItemVo friendItemVo);
 
+
+    @Insert("INSERT into tray_friend(account,faccount) values (#{account},#{faccount}")
+    int insertFriend(String account,String faccount);
 
 
 

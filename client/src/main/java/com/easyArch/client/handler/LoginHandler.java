@@ -14,4 +14,10 @@ public class LoginHandler implements Handler {
         API handler = client.handler();
         return handler.login((User) object);
     }
+
+    @Override
+    public Object handler(Object object1, Object object2) {
+        return null;
+    }
+
 }
