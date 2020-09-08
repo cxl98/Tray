@@ -9,7 +9,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class TrayApplication extends Application {
+public class ClientTrayApplication extends Application {
     public static void main(String[] args) {
         launch();
     }

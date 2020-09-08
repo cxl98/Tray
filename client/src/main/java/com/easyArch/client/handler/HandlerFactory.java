@@ -14,6 +14,8 @@ public class HandlerFactory {
         map.put("login",new LoginHandler());
         map.put("registry",new RegistryHandler());
         map.put("send",new SendHandler());
+        map.put("search",new SearchHandler());
+        map.put("insert",new InsertHandler());
     }
     public Handler handler(String name){
         if (null!=name){

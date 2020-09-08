@@ -5,17 +5,17 @@ import com.easeArch.common.handler.Handler;
 import com.easeArch.common.service.API;
 import com.easyArch.client.netty.TrayClient;
 
-public class RegistryHandler implements Handler {
-
-
+public class InsertHandler implements Handler {
+    @Override
     public Object handler(Object object) {
-        TrayClient client = TrayClient.getClient();
-        API handler = client.handler();
-        return handler.registry((User) object);
+        return null;
     }
+
 
     @Override
     public Object handler(Object object1, Object object2) {
-        return null;
+        TrayClient client = TrayClient.getClient();
+        API handler = client.handler();
+        return handler.insertFriend((String)object1,(String)object2);
     }
 }

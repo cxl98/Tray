@@ -50,7 +50,7 @@
       </AnchorPane>
       <HBox layoutY="124.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: lightblue;">
          <children>
-            <TextField prefHeight="28.0" prefWidth="260.0" styleClass="-fx-prompt-text-fill:#000000;" text="%add.head.search" />
+            <TextField   fx:id="searchuser" prefHeight="28.0" prefWidth="260.0" styleClass="-fx-prompt-text-fill:#000000;" text="%add.head.search" />
             <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#queryEvent" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/seach/search_icon.png" />

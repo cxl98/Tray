@@ -4,7 +4,6 @@ import com.cxl.rpc.remoting.net.params.RpcResponse;
 import com.cxl.rpc.remoting.provider.annotation.RpcService;
 import com.cxl.rpc.util.ChannelUtil;
 import com.easeArch.common.entry.FriendItemVo;
-import com.easeArch.common.entry.Packet;
 import com.easeArch.common.entry.User;
 import com.easeArch.common.enums.StatusCode;
 import com.easeArch.common.res.TrayResponse;
@@ -18,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReference;
 
 @RpcService
 @Service
@@ -27,10 +27,17 @@ public class Server implements API {
     private UserServer userServer;
     @Autowired
     private Id id;
+
+
+
     private static Map<String,Channel> online=new ConcurrentHashMap<>();
     private static List<User> users=new ArrayList<>();
 
+
+
+
     public Object login(User user) {
+
         User userByUid = userServer.findUserByUsername(user.getAccount());
         if (null!=userByUid&&userByUid.getAccount().equals(user.getAccount())){
             Channel channel = ChannelUtil.getChannels().getChannel();
@@ -44,6 +51,7 @@ public class Server implements API {
 
         return StatusCode.ACCOUNT_NOT_MATCH.getCode();
     }
+
 
     private void onFriend(User user) {
         for (User item: users) {
@@ -72,4 +80,30 @@ public class Server implements API {
     public List<FriendItemVo> friend(String account) {
         return userServer.friendByCount(account);
     }
+
+
+    @Override
+    public User searchFriend(String account) {
+        User user = userServer.findUserByAccount(account);
+        if (null==user){
+            return null;
+        }
+        return user;
+
+    }
+
+
+   @Override
+    public int insertFriend( String  account ,String faccount){
+
+    return  userServer.insertFriend(account, faccount);
+
+
+    }
+
+
+
+
+
+
 }

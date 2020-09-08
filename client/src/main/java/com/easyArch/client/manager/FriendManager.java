@@ -83,12 +83,19 @@ public class FriendManager {
 
     public void refreshMyFriendsView(List<FriendItemVo> friendItems) {
         Accordion competent = getCompetent();
+
+        System.out.println("xxxxxxxxxx???>>>>>>>"+competent);
+
+
         String groupName = null;
+
         for (FriendItemVo itemVo : friendItems) {
             int groupId = itemVo.getFid();
-             groupName= groupNames.get(groupId);
+           groupName = groupNames.get(groupId);
         }
         decorateFriendGroup(competent, groupName, friendItems);
+
+
     }
 
     /**

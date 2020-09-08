@@ -6,11 +6,16 @@ import com.easyArch.client.netty.TrayClient;
 
 public class SendHandler implements Handler {
 
-
     @Override
     public Object handler(Object object) {
         TrayClient client = TrayClient.getClient();
         API handler = client.handler();
         return handler.friend((String) object);
     }
+
+    @Override
+    public Object handler(Object object1, Object object2) {
+        return null;
+    }
+
 }

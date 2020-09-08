@@ -31,6 +31,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+//import javax.servlet.http.HttpSession;
 
 public class LoginViewController implements Initializable, ControllerStage {
     @FXML
@@ -53,6 +54,7 @@ public class LoginViewController implements Initializable, ControllerStage {
 
     private User user;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         login.disableProperty().bind(
@@ -61,7 +63,12 @@ public class LoginViewController implements Initializable, ControllerStage {
                                         0 == password.getText().length(),
                         username.textProperty(), password.textProperty()));
 
+
+
     }
+
+
+
 
     @Override
     public Stage getStage() {
@@ -72,6 +79,8 @@ public class LoginViewController implements Initializable, ControllerStage {
     @FXML
     public void login() {
         final String name = username.getText();
+//          AddViewController.setText(name);
+
         final String text = password.getText();
         if (!"".equals(name) || !"".equals(text)) {
             Object object = isObject(name, text);
@@ -91,7 +100,6 @@ public class LoginViewController implements Initializable, ControllerStage {
                 errorTips.setText(StatusCode.macth("6"));
             }
         }
-
     }
 
     private List<FriendItemVo> isFriend(String name) {
@@ -107,7 +115,7 @@ public class LoginViewController implements Initializable, ControllerStage {
         user.setPwd(pwd);
         HandlerFactory factory = HandlerFactory.getFactory();
         Handler login = factory.handler("login");
-        return login.handler(user);
+        return    login.handler(user);
     }
 
     private void gotoMain(User user) {
