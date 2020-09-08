@@ -4,12 +4,10 @@ package com.easyArch.client.ui.controller;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class AppModel
-{
-    private StringProperty text ;
+public class AppModel {
+    private StringProperty text;
 
-    public AppModel()
-    {
+    public AppModel() {
         this.text = new SimpleStringProperty();
     }
 

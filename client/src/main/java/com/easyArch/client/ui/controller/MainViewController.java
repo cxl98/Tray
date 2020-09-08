@@ -58,72 +58,70 @@ public class MainViewController implements Initializable, ControllerStage {
         SimpleStringProperty simpleStringProperty = new SimpleStringProperty();
         simpleStringProperty.set(username);
         this.username.textProperty().bind(simpleStringProperty);
-        Image image=ResourceContainer.getHead();
+        Image image = ResourceContainer.getHead();
         shineImage.setImage(image);
     }
 
 
     @FXML
-    private void close(){
+    private void close() {
         System.exit(0);
     }
+
     @FXML
-    private void closeEntered(){
-        Image image= ResourceContainer.getClose_1();
+    private void closeEntered() {
+        Image image = ResourceContainer.getClose_1();
         close.setImage(image);
     }
 
     @FXML
-    private void closeExited(){
-        Image image=ResourceContainer.getClose();
+    private void closeExited() {
+        Image image = ResourceContainer.getClose();
         close.setImage(image);
     }
 
     @FXML
-    private void minEntered(){
-        Image image=ResourceContainer.getMin_1();
-        min.setImage(image);
-    }
-    @FXML
-    private void minExited(){
-        Image image=ResourceContainer.getMin();
+    private void minEntered() {
+        Image image = ResourceContainer.getMin_1();
         min.setImage(image);
     }
 
     @FXML
-    private void min(){
+    private void minExited() {
+        Image image = ResourceContainer.getMin();
+        min.setImage(image);
+    }
+
+    @FXML
+    private void min() {
         getStage().setIconified(true);
     }
 
 
-
-
     public void clicked() {
-        FileChooser fileChooser=new FileChooser();
-        Stage stage=new Stage();
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = new Stage();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG","*.png"),new FileChooser.ExtensionFilter("JPG","*.jpg"));
-        File file=fileChooser.showOpenDialog(stage);
-        if (null!=file){
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG", "*.png"), new FileChooser.ExtensionFilter("JPG", "*.jpg"));
+        File file = fileChooser.showOpenDialog(stage);
+        if (null != file) {
             String path = file.getAbsoluteFile().toURI().toString();
             System.out.println(path);
             File image = ImageUtil.image(file);
             System.out.println(image);
             String string = file.getAbsoluteFile().toURI().toString();
 
-            Image image1=new Image(string);
+            Image image1 = new Image(string);
             shineImage.setImage(image1);
         }
     }
 
 
-
     @FXML
-    public void add(){
-    getStage().close();
-    gotoAdd();
+    public void add() {
+        getStage().close();
+        gotoAdd();
     }
-
 
 
     @FXML

@@ -15,19 +15,20 @@ import java.io.IOException;
 import java.util.Date;
 
 public class Tray {
-    public volatile static int x=0;
-    public static Thread thread=null;
+    public volatile static int x = 0;
+    public static Thread thread = null;
     private static Logger logger = Logger.getLogger(Tray.class);
-    public static String path= GetPath.getfile();
+    public static String path = GetPath.getfile();
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() ->
                 createGUI());
     }
 
     public static void createGUI() {
-        logger.info(new Date()+"  托盘启动");
-        logger.info(new Date()+"  托盘启动"+ GetPath.getfile());
-        System.out.println(new Date()+"  托盘启动");
+        logger.info(new Date() + "  托盘启动");
+        logger.info(new Date() + "  托盘启动" + GetPath.getfile());
+        System.out.println(new Date() + "  托盘启动");
         /*
          * 添加系统托盘
          */
@@ -49,7 +50,7 @@ public class Tray {
             MenuItem exitItem = new MenuItem("退出");
 
             openFile.addActionListener(e -> {
-                if (thread!=null){
+                if (thread != null) {
 //                    try {
 ////                        MyServer.ss.close();
 //                        logger.info(new Date()+"  修改文件");
@@ -58,8 +59,8 @@ public class Tray {
 //                    }
                 }
                 System.out.println(x);
-                File file=new File(path+"/键位.txt");
-                if(!file.exists()){
+                File file = new File(path + "/键位.txt");
+                if (!file.exists()) {
                     try {
                         file.createNewFile();
                         logger.info(file.getPath());
@@ -79,9 +80,9 @@ public class Tray {
                 // 点击打开菜单时显示窗口
 //                MyServer myServer=new MyServer();
 //                thread=new Thread(myServer);
-                logger.info(new Date()+"  开始启动");
-                if (thread!=null){
-                    Peizhi.readFile(path+"键位.txt", Keyboard.hashMap1,"1");
+                logger.info(new Date() + "  开始启动");
+                if (thread != null) {
+                    Peizhi.readFile(path + "键位.txt", Keyboard.hashMap1, "1");
                 }
                 thread.start();
                 System.out.println(Thread.currentThread().getId());
@@ -91,7 +92,7 @@ public class Tray {
                 // 点击打开菜单时显示窗口
 //                Myclient myclient=new Myclient();
 //                thread=new Thread(myclient);
-                logger.info(new Date()+"  开始连接服务器");
+                logger.info(new Date() + "  开始连接服务器");
                 thread.start();
                 System.out.println(Thread.currentThread().getId());
             });
@@ -101,14 +102,14 @@ public class Tray {
 //                if(Myclient.eventLoopGroup!=null){
 //                    Myclient.eventLoopGroup.shutdownGracefully();
 //                }
-                logger.info(new Date()+"  断开与服务器的连接");
+                logger.info(new Date() + "  断开与服务器的连接");
 
             });
 
 
             exitItem.addActionListener(e -> {
                 // 点击退出菜单时退出程序
-                logger.info(new Date()+"  退出托盘程序");
+                logger.info(new Date() + "  退出托盘程序");
                 System.out.println("退出托盘程序");
                 System.exit(0);
             });

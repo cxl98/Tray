@@ -41,23 +41,23 @@ public class RegistryViewController implements Initializable, ControllerStage {
 
     @FXML
     public void register() {
-        String userName= username.getText();
+        String userName = username.getText();
         String pwd = password.getText();
         String nickName = nickname.getText();
-        register(userName,pwd,nickName);
+        register(userName, pwd, nickName);
 
-        if (null!=user&&!"".equals(user)){
-            HandlerFactory handlerFactory=HandlerFactory.getFactory();
+        if (null != user && !"".equals(user)) {
+            HandlerFactory handlerFactory = HandlerFactory.getFactory();
             Handler registry = handlerFactory.handler("registry");
             Object handler = registry.handler(user);
-            if (null!=handler&&!handler.equals("")){
+            if (null != handler && !handler.equals("")) {
                 gotoLogin();
             }
         }
     }
 
     private void register(String userName, String pwd, String nickName) {
-        user=new User();
+        user = new User();
         user.setAccount(userName);
         user.setPwd(pwd);
         user.setUsername(nickName);
@@ -69,15 +69,17 @@ public class RegistryViewController implements Initializable, ControllerStage {
     public void register_entered() {
         register.setStyle("-fx-background-radius:4;-fx-background-color: #097299");
     }
+
     @FXML
     public void register_exit() {
         register.setStyle("-fx-background-radius:4;-fx-background-color: #2d50bb");
     }
+
     @FXML
     public void gotoLogin() {
         clearFields();
-        UiController uiController=UiController.getInstance();
-        uiController.switchStage(IdContainer.LoginView,IdContainer.RegisterView);
+        UiController uiController = UiController.getInstance();
+        uiController.switchStage(IdContainer.LoginView, IdContainer.RegisterView);
     }
 
     private void clearFields() {
@@ -92,28 +94,33 @@ public class RegistryViewController implements Initializable, ControllerStage {
     public void close() {
         System.exit(0);
     }
+
     @FXML
     public void closeEntered() {
-        Image image= ResourceContainer.getClose_1();
+        Image image = ResourceContainer.getClose_1();
         closeBtn.setImage(image);
     }
+
     @FXML
     public void closeExited() {
-        Image image=ResourceContainer.getClose();
+        Image image = ResourceContainer.getClose();
         closeBtn.setImage(image);
     }
+
     @FXML
     public void min() {
-        Stage stage=getStage();
-        if (null!=stage){
+        Stage stage = getStage();
+        if (null != stage) {
             stage.setIconified(true);
         }
     }
+
     @FXML
     public void minEntered() {
         Image image = ResourceContainer.getMin_1();
         minBtn.setImage(image);
     }
+
     @FXML
     public void minExited() {
         Image image = ResourceContainer.getMin();
@@ -122,15 +129,15 @@ public class RegistryViewController implements Initializable, ControllerStage {
 
     @Override
     public Stage getStage() {
-        UiController uiController=UiController.getInstance();
-       return uiController.getStageByName(IdContainer.RegisterView);
+        UiController uiController = UiController.getInstance();
+        return uiController.getStageByName(IdContainer.RegisterView);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         register.disableProperty().bind(Bindings.createBooleanBinding(
-                ()->0==username.getText().length()||
-                    0==password.getText().length()||0==nickname.getText().length(),
+                () -> 0 == username.getText().length() ||
+                        0 == password.getText().length() || 0 == nickname.getText().length(),
                 username.textProperty(),
                 password.textProperty(),
                 nickname.textProperty()

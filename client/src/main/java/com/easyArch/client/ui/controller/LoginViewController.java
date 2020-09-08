@@ -64,10 +64,7 @@ public class LoginViewController implements Initializable, ControllerStage {
                         username.textProperty(), password.textProperty()));
 
 
-
     }
-
-
 
 
     @Override
@@ -85,17 +82,16 @@ public class LoginViewController implements Initializable, ControllerStage {
         if (!"".equals(name) || !"".equals(text)) {
             Object object = isObject(name, text);
             List<FriendItemVo> friend = isFriend(name);
-            if (null!=friend){
-                System.out.println("login"+friend);
+            if (null != friend) {
+                System.out.println("login" + friend);
                 FriendManager.getInstance().receiveFriendsList(friend);
             }
-            if (null!=object&&!"".equals(object)) {
+            if (null != object && !"".equals(object)) {
                 getStage().close();
                 UserManager.getInstance().addUser((User) object);
                 new Thread(() -> SwingUtilities.invokeLater(Tray::createGUI)).start();
                 gotoMain(user);
-            }
-            else {
+            } else {
                 errorPane.setVisible(true);
                 errorTips.setText(StatusCode.macth("6"));
             }
@@ -115,7 +111,7 @@ public class LoginViewController implements Initializable, ControllerStage {
         user.setPwd(pwd);
         HandlerFactory factory = HandlerFactory.getFactory();
         Handler login = factory.handler("login");
-        return    login.handler(user);
+        return login.handler(user);
     }
 
     private void gotoMain(User user) {
@@ -134,9 +130,6 @@ public class LoginViewController implements Initializable, ControllerStage {
     public void login_ex() {
         login.setStyle("-fx-background-radius:4;-fx-background-color: #e4e4e4");
     }
-
-
-
 
 
     @FXML
