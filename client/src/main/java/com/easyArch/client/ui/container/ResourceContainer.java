@@ -33,6 +33,8 @@ public class ResourceContainer {
         ResourceContainer.head = head;
     }
 
+
+
     private static Image getImage(String resourcePath) {
         return new Image(Thread.currentThread().getContextClassLoader().getResourceAsStream(resourcePath));
 

@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -39,7 +41,6 @@ public class Tray {
             // 加载一个图片用于托盘图标的显示
 //            Image image = Toolkit.getDefaultToolkit().getImage(path+"1043767227.jpg");
             Image image = Toolkit.getDefaultToolkit().getImage("/home/cxl/桌面/周计划/cxl/托盘/Tray/client/src/main/resources/main/img/icon.jpg");
-            System.out.println(image);
             // 创建点击图标时的弹出菜单
             PopupMenu popupMenu = new PopupMenu();
 
@@ -58,7 +59,6 @@ public class Tray {
 //                        e1.printStackTrace();
 //                    }
                 }
-                System.out.println(x);
                 File file = new File(path + "/键位.txt");
                 if (!file.exists()) {
                     try {
@@ -133,7 +133,10 @@ public class Tray {
             }
 
 
-            trayIcon.addActionListener(e -> System.out.println("托盘图标被右键点击"));
+            trayIcon.addActionListener(e -> {
+                String actionCommand = e.getActionCommand();
+                System.out.println(actionCommand);
+            });
             trayIcon.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
