@@ -29,6 +29,7 @@ public class DataConfig {
 
     @Bean
     public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource){
+
         SqlSessionFactoryBean sqlSessionFactoryBean=new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setTypeAliasesPackage(jdbcInfo.getTypeAliasesPackage());
